@@ -1,0 +1,38 @@
+.box{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.back{
+    background-color: white;
+}
+
+#classicformpage1 .view {
+    background-image: url("https://static.posttoday.com/media/content/2019/06/24/18283467C2974862A69A6540CA962A32.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  
+  #classicformpage1 .gradient {
+    background: linear-gradient(
+      45deg,
+      rgba(55, 82, 87, 0.7),
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+  
+  #classicformpage1 .card {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  #classicformpage1 h6 {
+    line-height: 1.7;
+  }
+  
+  
+  #classicformpage1 label {
+    color: #fff !important;
+  }

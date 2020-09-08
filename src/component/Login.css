@@ -1,0 +1,51 @@
+.box{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.back{
+    background-color: white;
+}
+
+#classicformpage .view {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/57b5e46c440243ac7856a3b5/1557767195082-RMRPTCGR24T4Y731A7YR/ke17ZwdGBToddI8pDm48kNvT88LknE-K9M4pGNO0Iqd7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UbeDbaZv1s3QfpIA4TYnL5Qao8BosUKjCVjCf8TKewJIH3bqxw7fF48mhrq5Ulr0Hg/Serve901-web-map-background-bluetexture.png?format=2500w");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  
+  #classicformpage .gradient {
+    background: linear-gradient(
+      45deg,
+      rgba(7, 7, 7, 0.7),
+      rgba(151, 97, 52, 0.4) 100%
+    );
+  }
+  
+  #classicformpage .card {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  #classicformpage h6 {
+    line-height: 1.7;
+  }
+  
+  #classicformpage .navbar {
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  
+  #classicformpage .top-nav-collapse {
+    background: #424f95 !important;
+  }
+  
+  @media (max-width: 768px) {
+    #classicformpage .navbar:not(.top-nav-collapse) {
+      background: #424f95 !important;
+    }
+  }
+  
+  #classicformpage label {
+    color: #fff !important;
+  }
