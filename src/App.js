@@ -6,7 +6,6 @@ import Login from './component/Login'
 import Page_home from './component/Page_home'
 import Page_covid from './component/Page_covid'
 import Page_table from './component/Page_table'
-import Page_show from './component/Page_show'
 import Page_contact from './component/Page_contact'
 
 import 'mdbreact/dist/css/mdb.css'
@@ -50,8 +49,7 @@ class App extends Component {
         <Route path='/login' component={Login} />
         <Route path='/page_home' component={Page_home} />
         <Route path='/page_covid' component={Page_covid} />
-        <Route path='/page_table' component={Page_table} />
-        <Route path='/page_show' component={Page_show} />
+        <Route path='/page_table' component={Page_table} />  
         <Route path='/page_contact' component={Page_contact} />
       </div>
     )
