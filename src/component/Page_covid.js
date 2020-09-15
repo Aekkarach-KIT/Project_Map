@@ -2,7 +2,7 @@ import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 
 import Typography from '@material-ui/core/Typography'
-
+import './Style.css'
 import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
@@ -112,7 +112,7 @@ class PageCovid extends React.Component {
     const { classes } = this.props
     const { dataTimeline, dataTimeline15, data_text, data_pie } = this.state
     return (
-      <div>
+      <div className='bgco'>
         <NaBar />
         <div>
           <div class='container-fluid'>

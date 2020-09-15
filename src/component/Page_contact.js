@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import fire from '../config/fire'
 import NaBar from './Bar'
 import Footer from './Footer'
-
+import './Style.css'
 class PageContact extends Component {
   constructor (props) {
     super(props)
@@ -74,7 +74,7 @@ class PageContact extends Component {
 
   render () {
     return (
-      <div>
+      <div className='bgco'>
         <NaBar />
         {this.state.alert && (
           <div

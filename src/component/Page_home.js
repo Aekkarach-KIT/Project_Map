@@ -1,14 +1,14 @@
 import NaBar from './Bar'
 import Footer from './Footer'
+import PageTitle from './PageTitle'
 import './Style.css'
 import React, { Component, Fragment } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import classnames from 'classnames'
-import Chart from './chart'
+import Charts from './chart'
 import Pies from './pie'
 import Tabletop from 'tabletop'
-
-import { MDBPopover, MDBPopoverBody, MDBBtn, MDBContainer } from 'mdbreact'
+import { Chart } from 'react-google-charts'
 import {
   Row,
   Col,
@@ -26,52 +26,8 @@ import {
 } from 'reactstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faAngleUp,
-  faArrowRight,
-  faArrowUp,
-  faArrowLeft,
-  faAngleDown
-} from '@fortawesome/free-solid-svg-icons'
-import {
-  AreaChart,
-  Area,
-  Line,
-  ResponsiveContainer,
-  Bar,
-  BarChart,
-  ComposedChart,
-  CartesianGrid,
-  Tooltip,
-  LineChart
-} from 'recharts'
-
-const data = [
-  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-  { name: 'Page B', uv: 2000, pv: 1398, amt: 2210 },
-  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
-  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
-  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
-  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
-  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 }
-]
-
-const data2 = [
-  { name: 'Page A', uv: 5400, pv: 5240, amt: 1240 },
-  { name: 'Page B', uv: 7300, pv: 4139, amt: 3221 },
-  { name: 'Page C', uv: 8200, pv: 7980, amt: 5229 },
-  { name: 'Page D', uv: 6278, pv: 4390, amt: 3200 },
-  { name: 'Page E', uv: 3189, pv: 7480, amt: 6218 },
-  { name: 'Page D', uv: 9478, pv: 6790, amt: 2200 },
-  { name: 'Page E', uv: 1289, pv: 1980, amt: 7218 },
-  { name: 'Page F', uv: 3139, pv: 2380, amt: 5150 },
-  { name: 'Page G', uv: 5349, pv: 3430, amt: 3210 }
-]
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { ResponsiveContainer } from 'recharts'
 
 export default class PageHome extends Component {
   constructor () {
@@ -81,7 +37,7 @@ export default class PageHome extends Component {
       dropdownOpen: false,
       activeTab1: '11',
       data: [],
-      People: [],
+      People: []
     }
     this.toggle = this.toggle.bind(this)
     this.toggle1 = this.toggle1.bind(this)
@@ -125,8 +81,8 @@ export default class PageHome extends Component {
   }
 
   render () {
-    const {data } = this.state
-    const {People } = this.state
+    const { data } = this.state
+    const { People } = this.state
     return (
       <div className='bgco'>
         <Fragment>
@@ -158,76 +114,101 @@ export default class PageHome extends Component {
                   <div className='d-flex justify-content-center'>
                     <Row>
                       <Col mb='3'>
-                        <Card style={{ width: '18rem' }}>
+                        <Card
+                          style={{
+                            width: '18rem',
+                            backgroundColor: '#133b5c',
+                            color: '#fcdab7'
+                          }}
+                        >
                           <CardBody>
                             <CardTitle>ปริมาณยานพาหนะ</CardTitle>
-                            <CardText className='Text'>
+                            <CardText
+                              className='Text'
+                              style={{ color: '#e89f71', fontSize: 25 }}
+                            >
                               {obj.ปริมาณยานพาหนะ}
                             </CardText>
-                            <MDBPopover
-                              placement='top'
-                              popover
-                              clickable
-                              id='popper5'
-                            >
-                              <Button color='purple'>คลิก</Button>
-                              <div>
-                                <MDBPopoverBody>
-                                  <img
-                                    src='https://mdbootstrap.com/img/logo/mdb192x192.jpg'
-                                    alt=''
-                                  />
-                                </MDBPopoverBody>
-                              </div>
-                            </MDBPopover>
                           </CardBody>
                         </Card>
                       </Col>
 
                       <Col mb='3'>
-                        <Card style={{ width: '18rem' }}>
+                        <Card
+                          style={{
+                            width: '18rem',
+                            backgroundColor: '#133b5c',
+                            color: '#fcdab7'
+                          }}
+                        >
                           <CardBody>
                             <CardTitle>ปริมาณขยะ</CardTitle>
-                            <CardText className='Text'>
+                            <CardText
+                              className='Text'
+                              style={{ color: '#e89f71', fontSize: 25 }}
+                            >
                               {obj.ปริมาณขยะ}
                             </CardText>
-                            <Button color='purple'>คลิก</Button>
                           </CardBody>
                         </Card>
                       </Col>
 
                       <Col mb='3'>
-                        <Card style={{ width: '18rem' }}>
+                        <Card
+                          style={{
+                            width: '18rem',
+                            backgroundColor: '#133b5c',
+                            color: '#fcdab7'
+                          }}
+                        >
                           <CardBody>
                             <CardTitle>นักท่องเที่ยว</CardTitle>
-                            <CardText className='Text'>
+                            <CardText
+                              className='Text'
+                              style={{ color: '#e89f71', fontSize: 25 }}
+                            >
                               {obj.นักท่องเที่ยว}
                             </CardText>
-                            <Button color='purple'>คลิก</Button>
                           </CardBody>
                         </Card>
                       </Col>
 
                       <Col mb='3'>
-                        <Card style={{ width: '18rem' }}>
+                        <Card
+                          style={{
+                            width: '18rem',
+                            backgroundColor: '#133b5c',
+                            color: '#fcdab7'
+                          }}
+                        >
                           <CardBody>
                             <CardTitle>จำนวนครัวเรือน</CardTitle>
-                            <CardText className='Text'>
+                            <CardText
+                              className='Text'
+                              style={{ color: '#e89f71', fontSize: 25 }}
+                            >
                               {obj.จำนวนครัวเรือน}
                             </CardText>
-                            <Button color='purple'>คลิก</Button>
                           </CardBody>
                         </Card>
                       </Col>
 
                       <Col mb='3'>
-                        <Card style={{ width: '18rem' }}>
+                        <Card
+                          style={{
+                            width: '18rem',
+                            backgroundColor: '#133b5c',
+                            color: '#fcdab7'
+                          }}
+                        >
                           <CardBody>
                             <CardTitle>ประชากรแฝง</CardTitle>
-                            <CardText className='Text'>
+                            <CardText
+                              className='Text'
+                              style={{ color: '#e89f71', fontSize: 24 }}
+                            >
                               {obj.ประชากรแฝง}
                             </CardText>
-                            <Button color='purple'>คลิก</Button>
                           </CardBody>
                         </Card>
                       </Col>
@@ -426,72 +407,53 @@ export default class PageHome extends Component {
                                 </span>
                               </div>
                             </div>
-                            <ResponsiveContainer height={187}>
-                              <AreaChart
-                                data={data}
-                                margin={{
-                                  top: -45,
-                                  right: 0,
-                                  left: 0,
-                                  bottom: 0
-                                }}
-                              >
-                                <defs>
-                                  <linearGradient
-                                    id='colorPv2'
-                                    x1='0'
-                                    y1='0'
-                                    x2='0'
-                                    y2='1'
-                                  >
-                                    <stop
-                                      offset='10%'
-                                      stopColor='var(--warning)'
-                                      stopOpacity={1}
-                                    />
-                                    <stop
-                                      offset='90%'
-                                      stopColor='var(--warning)'
-                                      stopOpacity={0}
-                                    />
-                                  </linearGradient>
-                                </defs>
-                                <Tooltip />
-                                <Area
-                                  type='monotoneX'
-                                  dataKey='uv'
-                                  stroke='var(--warning)'
-                                  strokeWidth={2}
-                                  fillOpacity={1}
-                                  fill='url(#colorPv2)'
-                                />
-                              </AreaChart>
+                            <ResponsiveContainer height={190}>
+                              <Chart
+                                chartType='Bar'
+                                data={[
+                                  ['ปี', 'เพศชาย', 'เพศหญิง', 'รวม'],
+                                  ['2555', 170766, 190139, 360905],
+                                  ['2556', 174827, 194695, 369522],
+                                  ['2557', 179221, 199143, 378364],
+                                  ['2558', 183132, 203473, 386605],
+                                  ['2559', 186606, 207563, 394169],
+                                  ['2560', 190219, 211798, 402017]
+                                ]}
+                                // For tests
+                                rootProps={{ 'data-testid': '2' }}
+                              />
                             </ResponsiveContainer>
                           </div>
                         </TabPane>
                         <TabPane tabId='22'>
                           <div className='widget-chart p-0'>
                             <ResponsiveContainer height={179}>
-                              <ComposedChart data={data2}>
-                                <CartesianGrid stroke='#ffffff' />
-                                <Area
-                                  type='monotone'
-                                  dataKey='amt'
-                                  fill='#f7ffd0'
-                                  stroke='#85a200'
-                                />
-                                <Bar
-                                  dataKey='pv'
-                                  barSize={16}
-                                  fill='var(--primary)'
-                                />
-                                <Line
-                                  type='monotone'
-                                  dataKey='uv'
-                                  strokeWidth='3'
-                                  stroke='var(--danger)'
-                                />
-                              </ComposedChart>
+                              <Chart
+                                width={'550px'}
+                                height={'500px'}
+                                chartType='LineChart'
+                                data={[
+                                  ['ปี', 'จำนวน(คน)'],
+
+                                  [2553, 45000],
+                                  [2554, 55000],
+                                  [2555, 70000],
+                                  [2556, 80000],
+                                  [2557, 94000],
+                                  [2558, 120000],
+                                  [2559, 150000],
+                                  [2560, 200000]
+                                ]}
+                                options={{
+                                  hAxis: {
+                                    title: 'ปี'
+                                  },
+                                  vAxis: {
+                                    title: 'จำนวนประชากร'
+                                  }
+                                }}
+                                rootProps={{ 'data-testid': '1' }}
+                              />
                             </ResponsiveContainer>
                             <div className='widget-chart-content mt-3 mb-2'>
                               <div className='widget-description mt-0 text-success'>
@@ -621,62 +583,9 @@ export default class PageHome extends Component {
                   </Col>
                 </Row>
                 <Col>
-                  <Chart />
+                  <Charts />
                 </Col>
-                {data.map(obj => {
-                  return (
-                    <Row>
-                      <Col md='12'>
-                        <Card className='main-card mb-3 mt-7'>
-                          <div className='card-header'>
-                            จำนวนประชากรจำแนกตามเขตการปกครอง
-                          </div>
-                          <div className='table-responsive'>
-                            <table
-                              className='align-middle mb-0 table table-borderless table-striped table-hover'
-                              key={obj.No}
-                            >
-                              <thead>
-                                <tr>
-                                  <td className='text-center'>No.</td>
-                                  <td>ตำบล</td>
-                                  <td className='text-center'>เพศชาย</td>
-                                  <td className='text-center'>เพศหญิง</td>
-                                  <td className='text-center'>รวม</td>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td className='text-center text-muted'>
-                                    {obj.No}
-                                  </td>
-                                  <td>
-                                    <div className='widget-content p-0'>
-                                      <div className='widget-content-wrapper'>
-                                        <div className='widget-content-left flex2'>
-                                          <div className='widget-heading'>
-                                            {obj.ตำบล}
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </td>
-                                  <td className='text-center'>{obj.เพศชาย}</td>
-                                  <td className='text-center'>{obj.เพศหญิง}</td>
-                                  <td className='text-center'>{obj.รวม}</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </Card>
-
-                        <CardSubtitle>
-                          ที่มา : สำนักงานสถิติจังหวัดภูเก็ต
-                        </CardSubtitle>
-                      </Col>
-                    </Row>
-                  )
-                })}
+                <PageTitle />
               </Container>
               <Footer />
             </div>
