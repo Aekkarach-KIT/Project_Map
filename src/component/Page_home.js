@@ -9,6 +9,8 @@ import Charts from './chart'
 import Pies from './pie'
 import Tabletop from 'tabletop'
 import { Chart } from 'react-google-charts'
+import '../assets/font/TH Krub.ttf'
+import PageTable from './Page_table'
 import {
   Row,
   Col,
@@ -36,7 +38,7 @@ export default class PageHome extends Component {
     this.state = {
       dropdownOpen: false,
       activeTab1: '11',
-      data: [],
+
       People: []
     }
     this.toggle = this.toggle.bind(this)
@@ -56,18 +58,6 @@ export default class PageHome extends Component {
       })
     }
   }
-
-  component () {
-    Tabletop.init({
-      key: '12F30yHJjTV2U_p7mMqAatEKPSQ8O31WCcAitwH1RXoY',
-      callback: googleData => {
-        this.setState({
-          data: googleData
-        })
-      },
-      simpleSheet: true
-    })
-  }
   componentDidMount () {
     Tabletop.init({
       key: '1iiB6V8DpMS9yx6vph_qbWcP7uVXfPLcYXcMVFXaR15w',
@@ -81,7 +71,6 @@ export default class PageHome extends Component {
   }
 
   render () {
-    const { data } = this.state
     const { People } = this.state
     return (
       <div className='bgco'>
@@ -219,7 +208,7 @@ export default class PageHome extends Component {
               <Container className='Main'>
                 <Row>
                   <Col md='12' lg='6'>
-                    <Card className='mb-3'>
+                    <Card className='mb-7'>
                       <CardHeader className='card-header-tab'>
                         <div className='card-header-title'>
                           <i className='header-icon lnr-rocket icon-gradient bg-tempting-azure'>
@@ -264,7 +253,7 @@ export default class PageHome extends Component {
                         <TabPane tabId='11'>
                           <CardBody className='pt-2'>
                             <Row className='mt-3'>
-                              <Col md='6'>
+                              <Col md='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -289,7 +278,7 @@ export default class PageHome extends Component {
                                   </div>
                                 </div>
                               </Col>
-                              <Col md='6'>
+                              <Col md='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -423,6 +412,15 @@ export default class PageHome extends Component {
                                 rootProps={{ 'data-testid': '2' }}
                               />
                             </ResponsiveContainer>
+                            <CardSubtitle
+                              style={{
+                                textAlign: 'center',
+                                padding: 5,
+                                color: 'grey'
+                              }}
+                            >
+                              ที่มา: สำนักงานสถิติจังหวัดภูเก็ต
+                            </CardSubtitle>
                           </div>
                         </TabPane>
                         <TabPane tabId='22'>
@@ -576,16 +574,20 @@ export default class PageHome extends Component {
                       </TabContent>
                     </Card>
                   </Col>
-                  <Col md='12' lg='6'>
+                  <Col md='5' lg='6'>
                     <Card className='mb-3'>
                       <Pies />
                     </Card>
                   </Col>
                 </Row>
-                <Col>
+                <Card style={{marginTop:15,padding:2}}>
+                <Col >
                   <Charts />
                 </Col>
+                </Card>
+                <div style={{marginTop:15,padding:2}}>
                 <PageTitle />
+                </div>
               </Container>
               <Footer />
             </div>

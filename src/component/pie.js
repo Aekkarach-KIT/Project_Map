@@ -5,12 +5,18 @@ import { MDBContainer } from 'mdbreact'
 class Pies extends Component {
   state = {
     dataPie: {
-      labels: ['พุทธ', 'อิสลาม', 'คริสต์', 'อื่นๆ'],
+      labels: [
+        'ลูกจ้างเอกชน',
+        'ทำงานส่วนตัว',
+        'ช่วยธุระกิจครัวเรือน',
+        'ลูกจ้างรัฐบาล',
+        'นายจ้าง'
+      ],
       datasets: [
         {
-          data: [71.06, 27.6, 1.01, 0.33],
-          backgroundColor: ['#F7464A', '#46BFBD', '#FDB45C', '#949FB1'],
-          hoverBackgroundColor: ['#FF5A5E', '#5AD3D1', '#FFC870', '#A8B3C5']
+          data: [65.4, 19, 6.4, 4.5, 4.7],
+          backgroundColor: ['#F7464A', '#46BFBD', '#FDB45C', '#FF66CC','#339900'],
+          hoverBackgroundColor: ['#F7464A', '#46BFBD', '#FDB45C', '#FF66CC','#339900']
         }
       ]
     }
@@ -19,7 +25,7 @@ class Pies extends Component {
   render () {
     return (
       <MDBContainer>
-        <h3 className='mt-5'>การนับถือศาสนา (ร้อยละ)</h3>
+        <h3 className='mt-5'>สถานภาพการทำงาน</h3>
         <Pie data={this.state.dataPie} options={{ responsive: true }} />
       </MDBContainer>
     )
