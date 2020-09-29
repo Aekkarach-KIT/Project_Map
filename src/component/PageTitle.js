@@ -1,20 +1,6 @@
 import React, { Component } from 'react'
 import Tabletop from 'tabletop'
-import {
-  Row,
-  Col,
-  Button,
-  CardHeader,
-  Card,
-  CardBody,
-  Progress,
-  TabContent,
-  TabPane,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Container
-} from 'reactstrap'
+import { Row, Col, Card } from 'reactstrap'
 class PageTitle extends Component {
   constructor () {
     super()
@@ -48,15 +34,15 @@ class PageTitle extends Component {
               <div className='table-responsive'>
                 <table
                   className='align-middle mb-0 table table-borderless table-striped table-hover'
-                  key={obj.No}
+                  key={obj.ตำบล}
                 >
                   <thead>
                     <tr>
-                      <td className='text-center'>No.</td>
-                      <td>ตำบล</td>
-                      <td className='text-center'>เพศชาย</td>
-                      <td className='text-center'>เพศหญิง</td>
-                      <td className='text-center'>รวม</td>
+                      <th className='text-center'>No.</th>
+                      <th>ตำบล</th>
+                      <th className='text-center'>เพศชาย</th>
+                      <th className='text-center'>เพศหญิง</th>
+                      <th className='text-center'>รวม</th>
                     </tr>
                   </thead>
                   <tbody>

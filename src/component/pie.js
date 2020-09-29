@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Pie } from 'react-chartjs-2'
 import { MDBContainer } from 'mdbreact'
-
 class Pies extends Component {
   state = {
     dataPie: {

@@ -19,16 +19,19 @@
     "canvasjs-react-charts": "^1.0.5",
     "firebase": "^7.19.1",
     "fusioncharts": "^3.15.2",
+    "leaflet": "^1.7.1",
     "material-dashboard-react": "^1.9.0",
     "mdbreact": "^4.27.0",
     "navbar": "^2.1.0",
     "react": "^16.13.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-bootstrap": "^1.0.1",
+    "react-bootstrap-sidebar": "0.0.1",
     "react-db-google-sheets": "^2.1.1",
     "react-dom": "^16.13.1",
     "react-firebaseui": "^4.1.0",
     "react-google-charts": "^3.0.15",
+    "react-leaflet": "^2.7.0",
     "react-native": "^0.63.2",
     "react-native-fusioncharts": "^4.1.2",
     "react-redux": "^7.2.1",
@@ -50,7 +53,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -58,6 +65,8 @@
     ]
   },
   "rnpm": {
-    "assets": ["./assets/font/"]
+    "assets": [
+      "./assets/font/"
+    ]
   }
 }

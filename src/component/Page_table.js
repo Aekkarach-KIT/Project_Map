@@ -44,23 +44,23 @@ function createData (name, code, population, size) {
 }
 
 const rows = [
-  createData('กะรน', '83100', 12500, 20.0),
-  createData('ฉลอง', '83130', 18750, 30.0),
-  createData('ตลาดเหนือ', '83000', 5193, 8.31),
-  createData('ตลาดใหญ่', '83000', 2306, 3.69),
-  createData('รัษฎา', '83000', 21875.0, 35.0),
-  createData('ราไวย์', '83130', 14375, 23.0),
-  createData('วิชิต', '83000', 35000, 56.0),
-  createData('กมลา', '83150', 11775, 18.84),
-  createData('กะทู้', '83120', 19871.25, 31.794),
-  createData('ป่าตอง', '83150', 10250, 16.4),
-  createData('ป่าคลอก', '83110', 32187, 51.5),
-  createData('ศรีสุนทร', '83110', 28187, 45.1),
-  createData('สาคู', '83110', 6687, 10.7),
-  createData('เชิงทะเล', '83110', 23187, 37.1),
-  createData('เทพกษัตรี', '83110', 49000, 78.4),
-  createData('ไม้ขาว', '83110', 18250, 29.2),
-  createData('เกาะแก้ว', '83000', 30000, 48.0)
+  createData('กะรน', '83100', 8121, 20.0),
+  createData('ฉลอง', '83130', 26957, 30.0),
+  createData('ตลาดเหนือ', '83000', 22300, 8.31),
+  createData('ตลาดใหญ่', '83000', 57008, 3.69),
+  createData('รัษฎา', '83000', 48740, 35.0),
+  createData('ราไวย์', '83130', 18768, 23.0),
+  createData('วิชิต', '83000', 52233, 56.0),
+  createData('กมลา', '83150', 7106, 18.84),
+  createData('กะทู้', '83120', 30797, 31.794),
+  createData('ป่าตอง', '83150', 21294, 16.4),
+  createData('ป่าคลอก', '83110', 21358, 51.5),
+  createData('ศรีสุนทร', '83110', 25746, 45.1),
+  createData('สาคู', '83110', 6813, 10.7),
+  createData('เชิงทะเล', '83110', 6986, 37.1),
+  createData('เทพกษัตรี', '83110', 9093, 78.4),
+  createData('ไม้ขาว', '83110', 13433, 29.2),
+  createData('เกาะแก้ว', '83000', 16347, 48.0)
 ]
 
 const useStyles = makeStyles({
@@ -142,8 +142,8 @@ export default function StickyHeadTable () {
           onChangeRowsPerPage={handleChangeRowsPerPage}
         />
       </Paper>
-      <Footer />
 
+      <Footer />
     </div>
   )
 }

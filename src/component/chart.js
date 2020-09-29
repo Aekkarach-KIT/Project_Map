@@ -1,6 +1,7 @@
 import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 import { MDBContainer } from 'mdbreact'
+import { CardSubtitle } from 'reactstrap'
 
 class Charts extends React.Component {
   state = {
@@ -27,23 +28,23 @@ class Charts extends React.Component {
       datasets: [
         {
           data: [
-            18750,
-            12500,
-            35000,
-            30000,
-            14375,
-            21875,
-            5193,
-            11775,
-            19871,
-            10250,
-            18250,
-            6687,
-            49000,
-            28187,
-            32187,
-            23187,
-            6930
+            26957,
+            8121,
+            52233,
+            16347,
+            18768,
+            48740,
+            22300,
+            57008,
+            7106,
+            30797,
+            21358,
+            13433,
+            6813,
+            9093,
+            25746,
+            21358,
+            6986
           ],
           backgroundColor: [
             '#edb879',
@@ -96,6 +97,16 @@ class Charts extends React.Component {
           data={this.state.dataDoughnut}
           options={{ responsive: true }}
         />
+        <CardSubtitle
+          style={{
+            textAlign: 'left',
+            padding: 2,
+            marginTop: 5,
+            color: 'grey'
+          }}
+        >
+          ที่มา: กรมการปกครอง กระทรวงมหาดไทย
+        </CardSubtitle>
       </MDBContainer>
     )
   }

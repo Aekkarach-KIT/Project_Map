@@ -1,6 +1,5 @@
 import NaBar from './Bar'
 import Footer from './Footer'
-import PageTitle from './PageTitle'
 import './Style.css'
 import React, { Component, Fragment } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -9,8 +8,7 @@ import Charts from './chart'
 import Pies from './pie'
 import Tabletop from 'tabletop'
 import { Chart } from 'react-google-charts'
-import '../assets/font/TH Krub.ttf'
-import PageTable from './Page_table'
+
 import {
   Row,
   Col,
@@ -28,7 +26,7 @@ import {
 } from 'reactstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { ResponsiveContainer } from 'recharts'
 
 export default class PageHome extends Component {
@@ -72,6 +70,7 @@ export default class PageHome extends Component {
 
   render () {
     const { People } = this.state
+
     return (
       <div className='bgco'>
         <Fragment>
@@ -194,7 +193,7 @@ export default class PageHome extends Component {
                             <CardTitle>ประชากรแฝง</CardTitle>
                             <CardText
                               className='Text'
-                              style={{ color: '#e89f71', fontSize: 24 }}
+                              style={{ color: '#e89f71', fontSize: 25 }}
                             >
                               {obj.ประชากรแฝง}
                             </CardText>
@@ -206,8 +205,8 @@ export default class PageHome extends Component {
                 )
               })}
               <Container className='Main'>
-                <Row>
-                  <Col md='12' lg='6'>
+                <Row md='7' lg='7'>
+                  <Col md='7' lg='7'>
                     <Card className='mb-7'>
                       <CardHeader className='card-header-tab'>
                         <div className='card-header-title'>
@@ -259,7 +258,7 @@ export default class PageHome extends Component {
                                     <div className='widget-content-wrapper'>
                                       <div className='widget-content-left mr-3'>
                                         <div className='widget-numbers fsize-4 text-muted'>
-                                          52.68%
+                                          52.73%
                                         </div>
                                       </div>
                                       <div className='widget-content-right'>
@@ -272,7 +271,7 @@ export default class PageHome extends Component {
                                       <Progress
                                         className='progress-bar-sm progress-bar-animated-alt'
                                         color='danger'
-                                        value='52.68'
+                                        value='52.73'
                                       />
                                     </div>
                                   </div>
@@ -284,7 +283,7 @@ export default class PageHome extends Component {
                                     <div className='widget-content-wrapper'>
                                       <div className='widget-content-left mr-3'>
                                         <div className='widget-numbers fsize-3 text-muted'>
-                                          47.32%
+                                          47.26%
                                         </div>
                                       </div>
                                       <div className='widget-content-right'>
@@ -297,7 +296,7 @@ export default class PageHome extends Component {
                                       <Progress
                                         className='progress-bar-sm progress-bar-animated-alt'
                                         color='success'
-                                        value='47.32'
+                                        value='47.26'
                                       />
                                     </div>
                                   </div>
@@ -312,7 +311,7 @@ export default class PageHome extends Component {
                                     <div className='widget-content-wrapper'>
                                       <div className='widget-content-left mr-3'>
                                         <div className='widget-numbers fsize-3 text-muted'>
-                                          9.72%
+                                          11.68%
                                         </div>
                                       </div>
                                       <div className='widget-content-right'>
@@ -325,7 +324,7 @@ export default class PageHome extends Component {
                                       <Progress
                                         className='progress-bar-sm progress-bar-animated-alt'
                                         color='primary'
-                                        value='9.72'
+                                        value='11.68'
                                       />
                                     </div>
                                   </div>
@@ -337,7 +336,7 @@ export default class PageHome extends Component {
                                     <div className='widget-content-wrapper'>
                                       <div className='widget-content-left mr-3'>
                                         <div className='widget-numbers fsize-3 text-muted'>
-                                          21.08%
+                                          24.11%
                                         </div>
                                       </div>
                                       <div className='widget-content-right'>
@@ -350,7 +349,7 @@ export default class PageHome extends Component {
                                       <Progress
                                         className='progress-bar-sm progress-bar-animated-alt'
                                         color='warning'
-                                        value='21.08'
+                                        value='24.11'
                                       />
                                     </div>
                                   </div>
@@ -364,7 +363,7 @@ export default class PageHome extends Component {
                                     <div className='widget-content-wrapper'>
                                       <div className='widget-content-left mr-3'>
                                         <div className='widget-numbers fsize-3 text-muted'>
-                                          69.2%
+                                          65.12%
                                         </div>
                                       </div>
                                       <div className='widget-content-right'>
@@ -378,7 +377,7 @@ export default class PageHome extends Component {
                                       <Progress
                                         className='progress-bar-sm progress-bar-animated-alt'
                                         color='primary'
-                                        value='69.2'
+                                        value='65.12'
                                       />
                                     </div>
                                   </div>
@@ -388,11 +387,11 @@ export default class PageHome extends Component {
                           </CardBody>
                           <div className='widget-chart p-0'>
                             <div className='widget-chart-content'>
-                              <div className='widget-description mt-0 text-warning'>
-                                <FontAwesomeIcon icon={faArrowUp} />
-                                <span className='pl-1'>2.10%</span>
+                              <div className='widget-description mt-0 text-danger'>
+                                <FontAwesomeIcon icon={faArrowDown} />
+                                <span className='pl-1' fontSize=''>0.066%</span>
                                 <span className='text-muted opacity-8 pl-1'>
-                                  ร้อยละการเพิ่มขึ้นของจำนวนปรชากรจากปีก่อนหน้า
+                                  ร้อยละการการขยายตัวของจำนวนประชากรเทียบจากปีก่อนหน้า
                                 </span>
                               </div>
                             </div>
@@ -401,12 +400,13 @@ export default class PageHome extends Component {
                                 chartType='Bar'
                                 data={[
                                   ['ปี', 'เพศชาย', 'เพศหญิง', 'รวม'],
-                                  ['2555', 170766, 190139, 360905],
-                                  ['2556', 174827, 194695, 369522],
                                   ['2557', 179221, 199143, 378364],
                                   ['2558', 183132, 203473, 386605],
                                   ['2559', 186606, 207563, 394169],
-                                  ['2560', 190219, 211798, 402017]
+                                  ['2560', 190219, 211798, 402017],
+                                  ['2561', 194074, 216137, 410211],
+                                  ['2562', 197036, 219546, 416582],
+                                  ['2563', 196756, 219549, 416305],
                                 ]}
                                 // For tests
                                 rootProps={{ 'data-testid': '2' }}
@@ -419,15 +419,15 @@ export default class PageHome extends Component {
                                 color: 'grey'
                               }}
                             >
-                              ที่มา: สำนักงานสถิติจังหวัดภูเก็ต
+                              ที่มา: กรมการปกครอง กระทรวงมหาดไทย
                             </CardSubtitle>
                           </div>
                         </TabPane>
                         <TabPane tabId='22'>
                           <div className='widget-chart p-0'>
-                            <ResponsiveContainer height={179}>
+                            <ResponsiveContainer height={200} width={600}>
                               <Chart
-                                width={'550px'}
+                                width={'500px'}
                                 height={'500px'}
                                 chartType='LineChart'
                                 data={[
@@ -465,7 +465,7 @@ export default class PageHome extends Component {
                           </div>
                           <CardBody className='pt-2'>
                             <Row>
-                              <Col md='6'>
+                              <Col md='10' lg='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -490,7 +490,7 @@ export default class PageHome extends Component {
                                   </div>
                                 </div>
                               </Col>
-                              <Col md='6'>
+                              <Col md='10' lg='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -518,7 +518,7 @@ export default class PageHome extends Component {
                             </Row>
                             <div className='divider mt-4' />
                             <Row>
-                              <Col md='6'>
+                              <Col md='10' lg='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -543,7 +543,7 @@ export default class PageHome extends Component {
                                   </div>
                                 </div>
                               </Col>
-                              <Col md='6'>
+                              <Col md='10' lg='10'>
                                 <div className='widget-content'>
                                   <div className='widget-content-outer'>
                                     <div className='widget-content-wrapper'>
@@ -574,20 +574,18 @@ export default class PageHome extends Component {
                       </TabContent>
                     </Card>
                   </Col>
-                  <Col md='5' lg='6'>
-                    <Card className='mb-3'>
+
+                  <Col md='5' lg='5'>
+                    <Card>
                       <Pies />
                     </Card>
                   </Col>
                 </Row>
-                <Card style={{marginTop:15,padding:2}}>
-                <Col >
-                  <Charts />
-                </Col>
+                <Card style={{ marginTop: 20, padding: 2 }}>
+                  <Col>
+                    <Charts />
+                  </Col>
                 </Card>
-                <div style={{marginTop:15,padding:2}}>
-                <PageTitle />
-                </div>
               </Container>
               <Footer />
             </div>
