@@ -13,3 +13,9 @@
 .bgco{
     background-color: #f1f3f8;
 }
+hr { border-left: 0; }
+hr.style5 {
+	background-color: #fff;
+    border-top: 7px dashed #000000;
+    
+}

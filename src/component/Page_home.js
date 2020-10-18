@@ -4,8 +4,6 @@ import './Style.css'
 import React, { Component, Fragment } from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import classnames from 'classnames'
-import Charts from './chart'
-import Pies from './pie'
 import Tabletop from 'tabletop'
 import { Chart } from 'react-google-charts'
 
@@ -22,7 +20,9 @@ import {
   CardTitle,
   CardSubtitle,
   CardText,
-  Container
+  Container,
+  CardImg
+
 } from 'reactstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -32,6 +32,7 @@ import { ResponsiveContainer } from 'recharts'
 export default class PageHome extends Component {
   constructor () {
     super()
+    
 
     this.state = {
       dropdownOpen: false,
@@ -67,9 +68,11 @@ export default class PageHome extends Component {
       simpleSheet: true
     })
   }
+ 
 
   render () {
     const { People } = this.state
+    
 
     return (
       <div className='bgco'>
@@ -389,34 +392,30 @@ export default class PageHome extends Component {
                             <div className='widget-chart-content'>
                               <div className='widget-description mt-0 text-danger'>
                                 <FontAwesomeIcon icon={faArrowDown} />
-                                <span className='pl-1' fontSize=''>0.066%</span>
+                                <span className='pl-1' fontSize=''>
+                                  0.066%
+                                </span>
                                 <span className='text-muted opacity-8 pl-1'>
                                   ร้อยละการการขยายตัวของจำนวนประชากรเทียบจากปีก่อนหน้า
                                 </span>
                               </div>
                             </div>
-                            <ResponsiveContainer height={190}>
-                              <Chart
-                                chartType='Bar'
-                                data={[
-                                  ['ปี', 'เพศชาย', 'เพศหญิง', 'รวม'],
-                                  ['2557', 179221, 199143, 378364],
-                                  ['2558', 183132, 203473, 386605],
-                                  ['2559', 186606, 207563, 394169],
-                                  ['2560', 190219, 211798, 402017],
-                                  ['2561', 194074, 216137, 410211],
-                                  ['2562', 197036, 219546, 416582],
-                                  ['2563', 196756, 219549, 416305],
-                                ]}
-                                // For tests
-                                rootProps={{ 'data-testid': '2' }}
-                              />
+                            <ResponsiveContainer height={220}>
+                              <iframe
+                                width='500'
+                                height='214'
+                                seamless
+                                frameborder='0'
+                                scrolling='no'
+                                src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1363727181&amp;format=interactive'
+                              ></iframe>
                             </ResponsiveContainer>
                             <CardSubtitle
                               style={{
                                 textAlign: 'center',
                                 padding: 5,
-                                color: 'grey'
+                                color: 'grey',
+                                fontSize: 14
                               }}
                             >
                               ที่มา: กรมการปกครอง กระทรวงมหาดไทย
@@ -576,17 +575,84 @@ export default class PageHome extends Component {
                   </Col>
 
                   <Col md='5' lg='5'>
-                    <Card>
-                      <Pies />
+                    <Card
+                      style={{
+                        marginTop: 0,
+                        height: '20rem'
+                      }}
+                    >
+                      <iframe
+                        width='420'
+                        height='328'
+                        seamless
+                        frameborder='0'
+                        scrolling='no'
+                        src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=775098942&amp;format=interactive'
+                      ></iframe>
+                    </Card>
+                    <Card
+                      style={{
+                        marginTop: 10
+                      }}
+                    >
+                      <iframe
+                        width='420'
+                        height='410'
+                        seamless
+                        frameborder='0'
+                        scrolling='no'
+                        src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1416066045&amp;format=interactive'
+                      ></iframe>
+                      <CardSubtitle
+                        style={{
+                          marginTop: 1,
+                          textAlign: 'left',
+                          color: 'grey',
+                          textAlign: 'center',
+                          fontSize: 14
+                        }}
+                      >
+                        ที่มา: กรมการปกครอง กระทรวงมหาดไทย
+                      </CardSubtitle>
                     </Card>
                   </Col>
                 </Row>
+                <hr class="style5"/>
+                <Row>
+                  <Card style={{ marginTop: 20, padding: 2 }}>
+                  ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
+                  
+  <CardImg 
+    source={{url: 'https://static.wixstatic.com/media/c6ba6c_377676e7db5c4b58ac33dfe0f985bfe0~mv2.gif'}} 
+    title="Above all i am here"
+  />
+                  
+                  </Card>
+                </Row>
                 <Card style={{ marginTop: 20, padding: 2 }}>
-                  <Col>
-                    <Charts />
+                <Col>
+                    <iframe
+                      width='1024'
+                      height='714'
+                      seamless
+                      frameborder='0'
+                      scrolling='no'
+                      src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1831049486&amp;format=interactive'
+                    ></iframe>
+                    <CardSubtitle
+                      style={{
+                        textAlign: 'center',
+                        color: 'grey',
+                        fontSize: 14,
+                        marginBottom: 10
+                      }}
+                    >
+                      ที่มา: กรมการปกครอง กระทรวงมหาดไทย
+                    </CardSubtitle>
                   </Col>
                 </Card>
               </Container>
+
               <Footer />
             </div>
           </ReactCSSTransitionGroup>
