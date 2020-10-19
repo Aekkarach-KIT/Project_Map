@@ -22,7 +22,6 @@ import {
   CardText,
   Container,
   CardImg
-
 } from 'reactstrap'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -32,7 +31,6 @@ import { ResponsiveContainer } from 'recharts'
 export default class PageHome extends Component {
   constructor () {
     super()
-    
 
     this.state = {
       dropdownOpen: false,
@@ -68,11 +66,9 @@ export default class PageHome extends Component {
       simpleSheet: true
     })
   }
- 
 
   render () {
     const { People } = this.state
-    
 
     return (
       <div className='bgco'>
@@ -577,8 +573,7 @@ export default class PageHome extends Component {
                   <Col md='5' lg='5'>
                     <Card
                       style={{
-                        marginTop: 0,
-                        height: '20rem'
+                        marginTop: 0
                       }}
                     >
                       <iframe
@@ -589,6 +584,17 @@ export default class PageHome extends Component {
                         scrolling='no'
                         src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=775098942&amp;format=interactive'
                       ></iframe>
+                      <CardSubtitle
+                        style={{
+                          marginTop: 1,
+                          textAlign: 'left',
+                          color: 'grey',
+                          textAlign: 'center',
+                          fontSize: 14
+                        }}
+                      >
+                        ที่มา: สำนักงานสถิติจังหวัดภูเก็ต
+                      </CardSubtitle>
                     </Card>
                     <Card
                       style={{
@@ -617,20 +623,124 @@ export default class PageHome extends Component {
                     </Card>
                   </Col>
                 </Row>
-                <hr class="style5"/>
+                <hr class='style5' />
                 <Row>
-                  <Card style={{ marginTop: 20, padding: 2 }}>
-                  ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
-                  
-  <CardImg 
-    source={{url: 'https://static.wixstatic.com/media/c6ba6c_377676e7db5c4b58ac33dfe0f985bfe0~mv2.gif'}} 
-    title="Above all i am here"
-  />
-                  
+                  <Card
+                    style={{
+                      marginTop: 20,
+                      padding: 2,
+                      width: '100%',
+                      marginBottom: 20
+                    }}
+                  >
+                    <CardTitle
+                      style={{
+                        textShadowOffset: { width: 2, height: 2 },
+                        fontSize: 20,
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        fontFamily: 'sans-serif',
+                        textDecorationStyle: 'solid'
+                      }}
+                    >
+                      ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
+                    </CardTitle>
+                    <Row
+                      style={{
+                        justifyContent: 'space-between',
+                        marginBottom: 10
+                      }}
+                    >
+                      <Card style={{ backgroundColor: '#D3D3D3' }}>
+                        <Col style={{ textAlign: 'center' }}>
+                          <div>
+                            <CardImg
+                              style={{
+                                marginTop: 7,
+                                resizeMode: 'contain',
+                                height: 150,
+                                width: 220
+                              }}
+                              variant='top'
+                              src='https://i.pinimg.com/736x/81/c0/36/81c036427b68bf284f5ddc04c3a32160.jpg'
+                            />
+                          </div>
+                          <div>
+                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=371&Itemid=635'>
+                              <Button>คลิก</Button>
+                            </a>
+                          </div>
+                        </Col>
+                      </Card>
+                      <Card style={{ backgroundColor: '#D3D3D3' }}>
+                        <Col style={{ textAlign: 'center' }}>
+                          <div>
+                            <CardImg
+                              style={{
+                                marginTop: 7,
+                                resizeMode: 'contain',
+                                height: 150,
+                                width: 220
+                              }}
+                              variant='top'
+                              src='https://image.freepik.com/free-vector/happy-young-couple-cartoon-icon_24908-6971.jpg'
+                            />
+                          </div>
+                          <div>
+                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=373&Itemid=636'>
+                              <Button>คลิก</Button>
+                            </a>
+                          </div>
+                        </Col>
+                      </Card>
+                      <Card style={{ backgroundColor: '#D3D3D3' }}>
+                        <Col style={{ textAlign: 'center' }}>
+                          <div>
+                            <CardImg
+                              style={{
+                                marginTop: 7,
+                                resizeMode: 'contain',
+                                height: 150,
+                                width: 220
+                              }}
+                              variant='top'
+                              src='https://image.freepik.com/free-vector/couple-elderly-with-smile-face_105783-129.jpg'
+                            />
+                          </div>
+                          <div>
+                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=374&Itemid=638'>
+                              <Button>คลิก</Button>
+                            </a>
+                          </div>
+                        </Col>
+                      </Card>
+                      <Card style={{ backgroundColor: '#D3D3D3' }}>
+                        <Col style={{ textAlign: 'center' }}>
+                          <div>
+                            <CardImg
+                              style={{
+                                marginTop: 7,
+                                resizeMode: 'contain',
+                                height: 150,
+                                width: 220
+                              }}
+                              variant='top'
+                              src='https://thumbs.dreamstime.com/b/woman-throw-garbage-trash-bin-plastic-bag-vector-isolated-waste-container-rubbish-segregation-177804394.jpg'
+                            />
+                          </div>
+                          <div>
+                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=372&Itemid=637'>
+                              <Button>คลิก</Button>
+                            </a>
+                          </div>
+                        </Col>
+                      </Card>
+                    </Row>
                   </Card>
                 </Row>
+                <hr class='style5' />
                 <Card style={{ marginTop: 20, padding: 2 }}>
-                <Col>
+                  <Col>
                     <iframe
                       width='1024'
                       height='714'
