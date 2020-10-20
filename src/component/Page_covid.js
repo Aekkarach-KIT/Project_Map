@@ -24,6 +24,7 @@ import {
   Pie,
   Cell
 } from 'recharts'
+import { Button, Row} from 'reactstrap'
 
 const styles = theme => ({
   appBarSpacer: theme.mixins.toolbar,
@@ -97,9 +98,9 @@ class PageCovid extends React.Component {
             newRecovered: lastData['NewRecovered']
           },
           data_pie: [
-            { name: 'hospitalized', value: lastData['Hospitalized'] },
-            { name: 'deaths', value: lastData['Deaths'] },
-            { name: 'recovered', value: lastData['Recovered'] }
+            { name: 'กำลังรักษา', value: lastData['Hospitalized'] },
+            { name: 'เสียชีวิต', value: lastData['Deaths'] },
+            { name: 'หายแล้ว', value: lastData['Recovered'] }
           ]
         })
       })
@@ -122,13 +123,77 @@ class PageCovid extends React.Component {
               </li>
             </ol>
           </div>
-
+          <Container>
+            <Row style={{ justifyContent: 'space-between' }}>
+              <div>
+                <a href='https://covid19.ddc.moph.go.th/th/self_screening'>
+                  <Button color='primary'
+                    style={{
+                      borderRadius: '12px',
+                      boxShadow:
+                        '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)',
+                      width: 350,
+                      height: 100,
+                      marginLeft: 50,
+                      fontSize: 25,
+                      color: 'white',
+                      fontFamily: 'monospace',
+                      textAlign: 'center',
+                      backgroundColor: '#66CCCC'
+                    }}
+                  >
+                    ทดสอบประเมินความเสี่ยง
+                  </Button>
+                </a>
+              </div>
+              <div>
+                <a href='https://www.xn--b3czh8ayeuf.com/'>
+                  <Button color="danger"
+                    style={{
+                      borderRadius: '12px',
+                      boxShadow:
+                        '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)',
+                      width: 350,
+                      height: 100,
+                      marginLeft: 50,
+                      fontSize: 25,
+                      color: 'white',
+                      fontFamily: 'monospace',
+                      textAlign: 'center'
+                    }}
+                  >
+                    ไทยชนะ
+                  </Button>
+                </a>
+              </div>
+              <div>
+                <a href='https://ddc.moph.go.th/viralpneumonia/img/drchana_full.jpg'>
+                  <Button color="success"
+                    style={{
+                      borderRadius: '12px',
+                      boxShadow:
+                        '0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)',
+                      width: 350,
+                      height: 100,
+                      marginLeft: 50,
+                      fontSize: 25,
+                      color: 'white',
+                      fontFamily: 'monospace',
+                      textAlign: 'center'
+                    }}
+                  >
+                    แอพหมอชนะ
+                  </Button>
+                </a>
+              </div>
+            </Row>
+          </Container>
           <div className={classes.appBarSpacer} />
           <Container>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography align='right'>
-                  Last updated: {data_text.updatedDate}
+                  อัพเดทล่าสุดเมื่อ: {data_text.updatedDate}
                 </Typography>
                 <Typography variant='subtitle2' align='right'>
                   <a
@@ -141,8 +206,11 @@ class PageCovid extends React.Component {
                 </Typography>
               </Grid>
               <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>
-                  <Typography>Confirmed</Typography>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: '#FFCC33' }}
+                >
+                  <Typography>ยืนยัน</Typography>
                   <Typography variant='h3'>
                     {data_text.confirmed.toLocaleString()}
                   </Typography>
@@ -152,8 +220,11 @@ class PageCovid extends React.Component {
                 </Paper>
               </Grid>
               <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>
-                  <Typography>Hospitalized</Typography>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: '#99CCFF' }}
+                >
+                  <Typography>รักษาตัวในโรงพยาบาล</Typography>
                   <Typography variant='h3'>
                     {data_text.hospitalized.toLocaleString()}
                   </Typography>
@@ -163,8 +234,11 @@ class PageCovid extends React.Component {
                 </Paper>
               </Grid>
               <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>
-                  <Typography>Deaths</Typography>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: '#FF6666' }}
+                >
+                  <Typography>เสียชีวิต</Typography>
                   <Typography variant='h3'>
                     {data_text.deaths.toLocaleString()}
                   </Typography>
@@ -174,8 +248,11 @@ class PageCovid extends React.Component {
                 </Paper>
               </Grid>
               <Grid item xs={6} sm={3}>
-                <Paper className={classes.paper}>
-                  <Typography>Recovered</Typography>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: '#00CC33' }}
+                >
+                  <Typography>หายแล้ว</Typography>
                   <Typography variant='h3'>
                     {data_text.recovered.toLocaleString()}
                   </Typography>
@@ -198,8 +275,8 @@ class PageCovid extends React.Component {
                       <YAxis />
                       <Tooltip />
                       <Legend />
-                      <Bar dataKey='NewConfirmed' fill='#8884d8' />
-                      <Bar dataKey='NewDeaths' fill='#FF9AA2' />
+                      <Bar dataKey='NewConfirmed' fill='#003399' />
+                      <Bar dataKey='NewDeaths' fill='#FF6666' />
                     </BarChart>
                   </ResponsiveContainer>
                 </Paper>
@@ -216,9 +293,9 @@ class PageCovid extends React.Component {
                         outerRadius={100}
                         label
                       >
-                        <Cell fill='#8884d8' />
-                        <Cell fill='#FF9AA2' />
-                        <Cell fill='#8FC1A9' />
+                        <Cell fill='#00CCFF' />
+                        <Cell fill='#FF6666' />
+                        <Cell fill='#33CC66' />
                       </Pie>
                       <Tooltip />
                     </PieChart>
