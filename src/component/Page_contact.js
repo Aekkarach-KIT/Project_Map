@@ -87,10 +87,10 @@ class PageContact extends Component {
         <div className='container' style={{ padding: `40px 0px` }}>
           <div className='row'>
             <div className='col-sm-4'>
-              <h2>ติดต่อเรา</h2>
+              <h2 style={{color:'white'}}>ติดต่อเรา</h2>
               <form onSubmit={this.sendMessage.bind(this)} ref='contactForm'>
                 <div className='form-group'>
-                  <label htmlFor='name'>ชื่อ</label>
+                  <label htmlFor='name' style={{color:'white'}}>ชื่อ</label>
                   <input
                     type='text'
                     className='form-control'
@@ -100,7 +100,7 @@ class PageContact extends Component {
                   />
                 </div>
                 <div className='form-group'>
-                  <label htmlFor='exampleInputEmail1'>Email</label>
+                  <label htmlFor='exampleInputEmail1' style={{color:'white'}}>Email</label>
                   <input
                     type='email'
                     className='form-control'
@@ -110,7 +110,7 @@ class PageContact extends Component {
                   />
                 </div>
                 <div className='form-group'>
-                  <label htmlFor='city'>ตำบล</label>
+                  <label htmlFor='city' style={{color:'white'}}>ตำบล</label>
                   <select
                     className='form-control'
                     id='city'
@@ -135,7 +135,7 @@ class PageContact extends Component {
                 </div>
 
                 <div className='form-group'>
-                  <label htmlFor='phone'>เบอร์โทรติดต่อ</label>
+                  <label htmlFor='phone' style={{color:'white'}}>เบอร์โทรติดต่อ</label>
                   <input
                     type='number'
                     className='form-control'
@@ -145,7 +145,7 @@ class PageContact extends Component {
                   />
                 </div>
                 <div className='form-group'>
-                  <label htmlFor='message'>ข้อความ</label>
+                  <label htmlFor='message' style={{color:'white'}}>ข้อความ</label>
                   <textarea
                     className='form-control'
                     id='message'
@@ -153,7 +153,7 @@ class PageContact extends Component {
                     ref={message => (this.textAreaMessage = message)}
                   ></textarea>
                 </div>
-                <button type='submit' className='btn btn-primary'>
+                <button type='submit' className='btn btn-success'>
                   ส่ง
                 </button>
               </form>
