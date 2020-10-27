@@ -24,7 +24,7 @@ import {
   Pie,
   Cell
 } from 'recharts'
-import { Button, Row} from 'reactstrap'
+import { Button, Row } from 'reactstrap'
 
 const styles = theme => ({
   appBarSpacer: theme.mixins.toolbar,
@@ -117,7 +117,7 @@ class PageCovid extends React.Component {
         <NaBar />
         <div>
           <div class='container-fluid'>
-            <ol class='breadcrumb mb-4'>
+            <ol class='breadcrumb mb-4' style={{marginTop:15}}>
               <li class='num'>
                 <h3>สถิติข้อมูลสถานการณ์ Covid-19 ในประเทศไทย</h3>
               </li>
@@ -127,7 +127,8 @@ class PageCovid extends React.Component {
             <Row style={{ justifyContent: 'space-between' }}>
               <div>
                 <a href='https://covid19.ddc.moph.go.th/th/self_screening'>
-                  <Button color='primary'
+                  <Button
+                    color='primary'
                     style={{
                       borderRadius: '12px',
                       boxShadow:
@@ -148,7 +149,8 @@ class PageCovid extends React.Component {
               </div>
               <div>
                 <a href='https://www.xn--b3czh8ayeuf.com/'>
-                  <Button color="danger"
+                  <Button
+                    color='danger'
                     style={{
                       borderRadius: '12px',
                       boxShadow:
@@ -168,7 +170,8 @@ class PageCovid extends React.Component {
               </div>
               <div>
                 <a href='https://ddc.moph.go.th/viralpneumonia/img/drchana_full.jpg'>
-                  <Button color="success"
+                  <Button
+                    color='success'
                     style={{
                       borderRadius: '12px',
                       boxShadow:
@@ -192,7 +195,7 @@ class PageCovid extends React.Component {
           <Container>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography align='right'>
+                <Typography align='right' style={{ color: 'white' }}>
                   อัพเดทล่าสุดเมื่อ: {data_text.updatedDate}
                 </Typography>
                 <Typography variant='subtitle2' align='right'>

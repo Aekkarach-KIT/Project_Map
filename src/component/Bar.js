@@ -15,7 +15,7 @@ const NaBar = props => {
           <Navbar.Brand href='/page_home'>หน้าแรก</Navbar.Brand>
           <Nav className='mr-auto'>
             <Nav.Link href='/page_covid'>Covid-19</Nav.Link>
-            <Nav.Link href='/page_table'>ตาราง</Nav.Link>
+            <Nav.Link href='/page_table'>สถิติแบ่งตามหมวดหมู่</Nav.Link>
             <Nav.Link href='/page_contact'>ติดต่อเรา</Nav.Link>
             
           </Nav>
