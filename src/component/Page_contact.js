@@ -3,6 +3,7 @@ import fire from '../config/fire'
 import NaBar from './Bar'
 import Footer from './Footer'
 import './Style.css'
+
 class PageContact extends Component {
   constructor (props) {
     super(props)

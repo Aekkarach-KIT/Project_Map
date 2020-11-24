@@ -71,7 +71,7 @@ export default class PageHome extends Component {
 
     return (
       <div className='bgco'>
-        <Fragment style={{backgroundColor:'#113C7A'}}>
+        <Fragment style={{ backgroundColor: '#113C7A' }}>
           <ReactCSSTransitionGroup
             component='div'
             transitionName='TabsAnimation'
@@ -86,8 +86,13 @@ export default class PageHome extends Component {
               {People.map(obj => {
                 return (
                   <div class='container-fluid'>
-                    <h2 class='mt-4' style={{color:'white'}}>จำนวนประชากร</h2>
-                    <ol class='breadcrumb mb-4' style={{backgroundColor:'#FFC0CB'}}>
+                    <h2 class='mt-4' style={{ color: 'white' }}>
+                      จำนวนประชากร
+                    </h2>
+                    <ol
+                      class='breadcrumb mb-4'
+                      style={{ backgroundColor: '#FFC0CB' }}
+                    >
                       <li class='num'>
                         <h3>{obj.People}</h3>
                       </li>
@@ -206,49 +211,17 @@ export default class PageHome extends Component {
                 <Row md='7' lg='7'>
                   <Col md='7' lg='7'>
                     <Card className='mb-7'>
-                      <CardHeader className='card-header-tab'>
+                      <CardHeader className='card-header-tab' style={{textAlign:'center'}}>
                         <div className='card-header-title'>
                           <i className='header-icon lnr-rocket icon-gradient bg-tempting-azure'>
                             {' '}
                           </i>
-                          อัตราการเปลี่ยนแปลงของประชากร
-                        </div>
-                        <div className='btn-actions-pane-right'>
-                          <Button
-                            outline
-                            className={
-                              'border-0 btn-pill btn-wide btn-transition ' +
-                              classnames({
-                                active: this.state.activeTab1 === '11'
-                              })
-                            }
-                            color='primary'
-                            onClick={() => {
-                              this.toggle1('11')
-                            }}
-                          >
-                            บุคคลในพื้นที่(ตามทะเบียนราษฎร์)
-                          </Button>
-                          <Button
-                            outline
-                            className={
-                              'ml-1 btn-pill btn-wide border-0 btn-transition ' +
-                              classnames({
-                                active: this.state.activeTab1 === '22'
-                              })
-                            }
-                            color='primary'
-                            onClick={() => {
-                              this.toggle1('22')
-                            }}
-                          >
-                            ประชากรแฝง
-                          </Button>
+                          อัตราการเปลี่ยนแปลงของประชากรตามทะเบียนราษฎร์
                         </div>
                       </CardHeader>
                       <TabContent activeTab={this.state.activeTab1}>
                         <TabPane tabId='11'>
-                          <CardBody className='pt-2'>
+                          <CardBody className='pt-2'style={{marginLeft:'2'}}>
                             <Row className='mt-3'>
                               <Col md='10'>
                                 <div className='widget-content'>
@@ -447,123 +420,7 @@ export default class PageHome extends Component {
                                 rootProps={{ 'data-testid': '1' }}
                               />
                             </ResponsiveContainer>
-                            <div className='widget-chart-content mt-3 mb-2'>
-                              <div className='widget-description mt-0 text-success'>
-                                <FontAwesomeIcon icon={faArrowUp} />
-                                <span className='pl-2 pr-2'>37.2%</span>
-                                <span className='text-muted opacity-8'>
-                                  ร้อยละการขยายตัวของจำนวนประชากรแฝงจากปีก่อนหน้า
-                                </span>
-                              </div>
-                            </div>
                           </div>
-                          <CardBody className='pt-2'>
-                            <Row>
-                              <Col md='10' lg='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          23%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          ประชากรแฝงกลางวัน
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='warning'
-                                        value='23'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col md='10' lg='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          76%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          ประชากรแฝงกลางคืน
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='info'
-                                        value='76'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                            <div className='divider mt-4' />
-                            <Row>
-                              <Col md='10' lg='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          83%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          นักท่องเที่ยว
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='danger'
-                                        value='83'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col md='10' lg='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          48%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          แรงงานต่างด้าว
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='alternate'
-                                        value='48'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                          </CardBody>
                         </TabPane>
                       </TabContent>
                     </Card>
@@ -622,14 +479,14 @@ export default class PageHome extends Component {
                     </Card>
                   </Col>
                 </Row>
-                <hr class='style5' style={{backgroundColor:'#113C7A'}}/>
+                <hr class='style5' style={{ backgroundColor: '#113C7A' }} />
                 <Row>
                   <Container
                     style={{
                       marginTop: 20,
                       width: '100%',
                       marginBottom: 20,
-                      backgroundColor:'#113C7A'
+                      backgroundColor: '#113C7A'
                     }}
                   >
                     <CardTitle
@@ -640,7 +497,7 @@ export default class PageHome extends Component {
                         textAlign: 'center',
                         fontFamily: 'sans-serif',
                         textDecorationStyle: 'solid',
-                        color:'white'
+                        color: 'white'
                       }}
                     >
                       ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
@@ -738,7 +595,7 @@ export default class PageHome extends Component {
                     </Row>
                   </Container>
                 </Row>
-                <hr class='style5' style={{backgroundColor:'#113C7A'}}/>
+                <hr class='style5' style={{ backgroundColor: '#113C7A' }} />
                 <Card style={{ marginTop: 20, padding: 2 }}>
                   <Col>
                     <iframe
