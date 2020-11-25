@@ -15,6 +15,7 @@ import {
   Container,
   CardImg
 } from 'reactstrap'
+import Chart from 'react-google-charts'
 import { MDBBtn } from 'mdbreact'
 class Calculator extends Component {
   constructor (props) {
@@ -77,11 +78,11 @@ class Calculator extends Component {
               <Row style={{ justifyContent: 'space-evenly', marginTop: '20' }}>
                 <div>
                   X1
-                  <input class='input' id='X1' type='number' maxlength='2' />
+                  <input class='input' id='X1' type='number' />
                 </div>
                 <div>
                   X2
-                  <input class='input' id='X2' type='number' size='5' />
+                  <input class='input' id='X2' type='number' size='20' />
                 </div>
                 <div>
                   X3
@@ -118,7 +119,11 @@ class Calculator extends Component {
               </Row>
 
               <Row style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
-                <MDBBtn color='amber' onClick={this.handleChange} style={{fontSize:'1.2rem'}}>
+                <MDBBtn
+                  color='amber'
+                  onClick={this.handleChange}
+                  style={{ fontSize: '1.2rem' }}
+                >
                   คำนวณ
                 </MDBBtn>
               </Row>
@@ -134,24 +139,26 @@ class Calculator extends Component {
                 <p id='totalPeople' class='title is-1'></p>
               </Row>
             </Col>
-            <Col style={{ textAlign: 'center' }}>
-              คำอธิบายตัวแปร
-              <Row style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
-                <ol textAlign='center'>
-                  <li> X1 คือ จำนวนห้องพักของโรงแรมทั้งหมด </li>
-                  <li> X2 คือ จำบ้านเช่าทั้งหมด</li>
-                  <li> X3 คือ จำนวนห้องพักของหอพักทั้งหมด</li>
-
-                  <li> R1 คือ ร้อยละของการเข้าพักในห้องพักโรงแรม </li>
-                  <li> R2 คือ ร้อยละของการเข้าอยู่อาศัยของบ้านเช่า</li>
-                  <li> R3 คือ ร้อยละของการเข้าพักในหอพัก</li>
-
-                  <li> K1 จำนวนคนที่เข้าพักต่อห้องในโรงแรม </li>
-                  <li> K2 จำนวนคนที่เข้าพักต่อหลังในบ้านเช่า</li>
-                  <li> K3 จำนวนคนที่เข้าพักต่อห้องในหอพัก</li>
-                </ol>
-              </Row>
-            </Col>
+            <Col style={{ textAlign: 'center' ,fontSize:'1.5rem'}}>คำอธิบายตัวแปร</Col>
+            <Row style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
+              <table width='80%' align='center' style={{color:'blue'}}>
+                <tr>
+                  <td> X1 คือ จำนวนห้องพักของโรงแรมทั้งหมด </td>
+                  <td> X2 คือ จำบ้านเช่าทั้งหมด </td>
+                  <td> X3 คือ จำนวนห้องพักของหอพักทั้งหมด </td>
+                </tr>
+                <tr>
+                  <td> R1 คือ ร้อยละของการเข้าพักในห้องพักโรงแรม </td>
+                  <td> R2 คือ ร้อยละของการเข้าอยู่อาศัยของบ้านเช่า </td>
+                  <td> R3 คือ ร้อยละของการเข้าพักในหอพัก </td>
+                </tr>
+                <tr>
+                  <td> K1 จำนวนคนที่เข้าพักต่อห้องในโรงแรม </td>
+                  <td> K2 จำนวนคนที่เข้าพักต่อหลังในบ้านเช่า </td>
+                  <td> K3 จำนวนคนที่เข้าพักต่อห้องในหอพัก </td>
+                </tr>
+              </table>
+            </Row>
           </CardBody>
         </Card>
       </Container>

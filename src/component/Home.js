@@ -86,17 +86,23 @@ export default class PageHome extends Component {
               {People.map(obj => {
                 return (
                   <div class='container-fluid'>
-                    <h2 class='mt-4' style={{ color: 'white' }}>
+                    <h2
+                      class='mt-4'
+                      style={{ color: 'white', textAlign: 'center' }}
+                    >
                       จำนวนประชากร
                     </h2>
-                    <ol
-                      class='breadcrumb mb-4'
-                      style={{ backgroundColor: '#FFC0CB' }}
+
+                    <h2
+                      style={{
+                        textAlign: 'center',
+                        backgroundColor: '#FFCCCC',
+                        marginBottom: '2rem',
+                        marginTop: '1rem'
+                      }}
                     >
-                      <li class='num'>
-                        <h3>{obj.People}</h3>
-                      </li>
-                    </ol>
+                      {obj.People}
+                    </h2>
                   </div>
                 )
               })}
@@ -108,15 +114,15 @@ export default class PageHome extends Component {
                         <Card
                           style={{
                             width: '18rem',
-                            backgroundColor: '#33FFCC',
-                            color: '#000080'
+                            backgroundColor: '#FFCC66',
+                            color: 'black'
                           }}
                         >
                           <CardBody>
                             <CardTitle>ปริมาณยานพาหนะ</CardTitle>
                             <CardText
                               className='Text'
-                              style={{ color: '#FF4500', fontSize: 25 }}
+                              style={{ color: '#FF0033', fontSize: 25 }}
                             >
                               {obj.ปริมาณยานพาหนะ}
                             </CardText>
@@ -128,15 +134,15 @@ export default class PageHome extends Component {
                         <Card
                           style={{
                             width: '18rem',
-                            backgroundColor: '#33FFCC',
-                            color: '#000080'
+                            backgroundColor: '#FFCC66',
+                            color: 'black'
                           }}
                         >
                           <CardBody>
                             <CardTitle>ปริมาณขยะ</CardTitle>
                             <CardText
                               className='Text'
-                              style={{ color: '#FF4500', fontSize: 25 }}
+                              style={{ color: '#FF0033', fontSize: 25 }}
                             >
                               {obj.ปริมาณขยะ}
                             </CardText>
@@ -148,15 +154,15 @@ export default class PageHome extends Component {
                         <Card
                           style={{
                             width: '18rem',
-                            backgroundColor: '#33FFCC',
-                            color: '#000080'
+                            backgroundColor: '#FFCC66',
+                            color: 'black'
                           }}
                         >
                           <CardBody>
                             <CardTitle>นักท่องเที่ยว</CardTitle>
                             <CardText
                               className='Text'
-                              style={{ color: '#FF4500', fontSize: 25 }}
+                              style={{ color: '#FF0033', fontSize: 25 }}
                             >
                               {obj.นักท่องเที่ยว}
                             </CardText>
@@ -168,37 +174,17 @@ export default class PageHome extends Component {
                         <Card
                           style={{
                             width: '18rem',
-                            backgroundColor: '#33FFCC',
-                            color: '#000080'
+                            backgroundColor: '#FFCC66',
+                            color: 'black'
                           }}
                         >
                           <CardBody>
                             <CardTitle>จำนวนครัวเรือน</CardTitle>
                             <CardText
                               className='Text'
-                              style={{ color: '#FF4500', fontSize: 25 }}
+                              style={{ color: '#FF0033', fontSize: 25 }}
                             >
                               {obj.จำนวนครัวเรือน}
-                            </CardText>
-                          </CardBody>
-                        </Card>
-                      </Col>
-
-                      <Col mb='3'>
-                        <Card
-                          style={{
-                            width: '18rem',
-                            backgroundColor: '#33FFCC',
-                            color: '#000080'
-                          }}
-                        >
-                          <CardBody>
-                            <CardTitle>ประชากรแฝง</CardTitle>
-                            <CardText
-                              className='Text'
-                              style={{ color: '#FF4500', fontSize: 25 }}
-                            >
-                              {obj.ประชากรแฝง}
                             </CardText>
                           </CardBody>
                         </Card>
@@ -211,7 +197,10 @@ export default class PageHome extends Component {
                 <Row md='7' lg='7'>
                   <Col md='7' lg='7'>
                     <Card className='mb-7'>
-                      <CardHeader className='card-header-tab' style={{textAlign:'center'}}>
+                      <CardHeader
+                        className='card-header-tab'
+                        style={{ textAlign: 'center' }}
+                      >
                         <div className='card-header-title'>
                           <i className='header-icon lnr-rocket icon-gradient bg-tempting-azure'>
                             {' '}
@@ -221,7 +210,10 @@ export default class PageHome extends Component {
                       </CardHeader>
                       <TabContent activeTab={this.state.activeTab1}>
                         <TabPane tabId='11'>
-                          <CardBody className='pt-2'style={{marginLeft:'2'}}>
+                          <CardBody
+                            className='pt-2'
+                            style={{ marginLeft: '2' }}
+                          >
                             <Row className='mt-3'>
                               <Col md='10'>
                                 <div className='widget-content'>
@@ -464,7 +456,7 @@ export default class PageHome extends Component {
                         frameborder='0'
                         scrolling='no'
                         src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1416066045&amp;format=interactive'
-                      ></iframe>
+                      />
                       <CardSubtitle
                         style={{
                           marginTop: 1,
@@ -497,7 +489,7 @@ export default class PageHome extends Component {
                         textAlign: 'center',
                         fontFamily: 'sans-serif',
                         textDecorationStyle: 'solid',
-                        color: 'white'
+                        color: 'White'
                       }}
                     >
                       ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
