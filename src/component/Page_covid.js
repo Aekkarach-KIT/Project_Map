@@ -117,7 +117,7 @@ class PageCovid extends React.Component {
         <NaBar />
         <div>
           <div class='container-fluid'>
-            <ol class='breadcrumb mb-4' style={{marginTop:15}}>
+            <ol class='breadcrumb mb-4' style={{ marginTop: 15 }}>
               <li class='num'>
                 <h3>สถิติข้อมูลสถานการณ์ Covid-19 ในประเทศไทย</h3>
               </li>
@@ -191,6 +191,8 @@ class PageCovid extends React.Component {
               </div>
             </Row>
           </Container>
+         
+
           <div className={classes.appBarSpacer} />
           <Container>
             <Grid container spacing={2}>

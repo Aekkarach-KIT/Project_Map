@@ -2,10 +2,6 @@ import NaBar from './Bar'
 import Footer from './Footer'
 import './Style.css'
 import React, { Component, Fragment } from 'react'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import classnames from 'classnames'
-import Tabletop from 'tabletop'
-import { Chart } from 'react-google-charts'
 import {
   Row,
   Col,
@@ -22,609 +18,103 @@ import {
   Container,
   CardImg
 } from 'reactstrap'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
-import { ResponsiveContainer } from 'recharts'
+import { Link } from 'react-router-dom'
 
 export default class PageHome extends Component {
-  constructor () {
-    super()
-
-    this.state = {
-      dropdownOpen: false,
-      activeTab1: '11',
-
-      People: []
-    }
-    this.toggle = this.toggle.bind(this)
-    this.toggle1 = this.toggle1.bind(this)
-  }
-
-  toggle () {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen
-    }))
-  }
-
-  toggle1 (tab) {
-    if (this.state.activeTab1 !== tab) {
-      this.setState({
-        activeTab1: tab
-      })
-    }
-  }
-  componentDidMount () {
-    Tabletop.init({
-      key: '1iiB6V8DpMS9yx6vph_qbWcP7uVXfPLcYXcMVFXaR15w',
-      callback: googleData => {
-        this.setState({
-          People: googleData
-        })
-      },
-      simpleSheet: true
-    })
-  }
-
   render () {
-    const { People } = this.state
-
     return (
-      <div className='bgco'>
-        <Fragment style={{ backgroundColor: '#113C7A' }}>
-          <ReactCSSTransitionGroup
-            component='div'
-            transitionName='TabsAnimation'
-            transitionAppear={true}
-            transitionAppearTimeout={0}
-            transitionEnter={false}
-            transitionLeave={false}
-          >
-            <div>
-              <NaBar />
+      <div>
+        <NaBar />
+        <Fragment>
+          <div>
+            <Container>
+              <div
+                style={{
+                  textAlign: 'center',
+                  letterSpacing: '3px',
+                  fontSize: '55px',
+                  fontStyle: 'bold',
+                  marginTop: '30px',
+                  color: '#259AC3'
+                }}
+              >
+                ข้อมูลสถิติจังหวัดภูเก็ต
+              </div>
+              <div
+                style={{
+                  textAlign: 'center',
+                  letterSpacing: '1px',
+                  fontSize: '20px',
+                  marginTop: '17px',
+                  color: '#525252'
+                }}
+              >
+                ระบบรวบรวมสถิติด้านต่างๆในพื้นที่จังหวัดภูเก็ต
+              </div>
+              <div
+                style={{
+                  textAlign: 'center',
+                  fontSize: '20px',
+                  fontStyle: 'bold',
+                  marginTop: '17px',
+                  color: '#606C7B'
+                }}
+              >
+                Phuket Static System
+              </div>
 
-              {People.map(obj => {
-                return (
-                  <div class='container-fluid'>
-                    <h2
-                      class='mt-4'
-                      style={{ color: 'white', textAlign: 'center' }}
-                    >
-                      จำนวนประชากร
-                    </h2>
+              <Row
+                style={{
+                  justifyContent: 'center',
+                  marginTop: '50px',
+                  marginBottom: '130px'
+                }}
+              >
+                <Col style={{ textAlign: 'center' }}>
+                  <Link to='/page_home'>
+                    <img
+                      src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
+                      style={{ width: '170px' }}
+                    />
+                  </Link>
 
-                    <h2
-                      style={{
-                        textAlign: 'center',
-                        backgroundColor: '#FFCCCC',
-                        marginBottom: '2rem',
-                        marginTop: '1rem'
-                      }}
-                    >
-                      {obj.People}
-                    </h2>
+                  <div style={{ marginTop: '10px' }}>หน้าหลัก</div>
+                </Col>
+                <Col style={{ textAlign: 'center' }}>
+                  <Link to='/page_covid'>
+                    <img
+                      src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
+                      style={{ width: '170px' }}
+                    />
+                  </Link>
+                  <div style={{ marginTop: '10px' }}>
+                    สถานการณ์โควิดในประเทศไทย
                   </div>
-                )
-              })}
-              {People.map(obj => {
-                return (
-                  <div className='d-flex justify-content-center'>
-                    <Row>
-                      <Col mb='3'>
-                        <Card
-                          style={{
-                            width: '18rem',
-                            backgroundColor: '#FFCC66',
-                            color: 'black'
-                          }}
-                        >
-                          <CardBody>
-                            <CardTitle>ปริมาณยานพาหนะ</CardTitle>
-                            <CardText
-                              className='Text'
-                              style={{ color: '#FF0033', fontSize: 25 }}
-                            >
-                              {obj.ปริมาณยานพาหนะ}
-                            </CardText>
-                          </CardBody>
-                        </Card>
-                      </Col>
-
-                      <Col mb='3'>
-                        <Card
-                          style={{
-                            width: '18rem',
-                            backgroundColor: '#FFCC66',
-                            color: 'black'
-                          }}
-                        >
-                          <CardBody>
-                            <CardTitle>ปริมาณขยะ</CardTitle>
-                            <CardText
-                              className='Text'
-                              style={{ color: '#FF0033', fontSize: 25 }}
-                            >
-                              {obj.ปริมาณขยะ}
-                            </CardText>
-                          </CardBody>
-                        </Card>
-                      </Col>
-
-                      <Col mb='3'>
-                        <Card
-                          style={{
-                            width: '18rem',
-                            backgroundColor: '#FFCC66',
-                            color: 'black'
-                          }}
-                        >
-                          <CardBody>
-                            <CardTitle>นักท่องเที่ยว</CardTitle>
-                            <CardText
-                              className='Text'
-                              style={{ color: '#FF0033', fontSize: 25 }}
-                            >
-                              {obj.นักท่องเที่ยว}
-                            </CardText>
-                          </CardBody>
-                        </Card>
-                      </Col>
-
-                      <Col mb='3'>
-                        <Card
-                          style={{
-                            width: '18rem',
-                            backgroundColor: '#FFCC66',
-                            color: 'black'
-                          }}
-                        >
-                          <CardBody>
-                            <CardTitle>จำนวนครัวเรือน</CardTitle>
-                            <CardText
-                              className='Text'
-                              style={{ color: '#FF0033', fontSize: 25 }}
-                            >
-                              {obj.จำนวนครัวเรือน}
-                            </CardText>
-                          </CardBody>
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
-                )
-              })}
-              <Container className='Main'>
-                <Row md='7' lg='7'>
-                  <Col md='7' lg='7'>
-                    <Card className='mb-7'>
-                      <CardHeader
-                        className='card-header-tab'
-                        style={{ textAlign: 'center' }}
-                      >
-                        <div className='card-header-title'>
-                          <i className='header-icon lnr-rocket icon-gradient bg-tempting-azure'>
-                            {' '}
-                          </i>
-                          อัตราการเปลี่ยนแปลงของประชากรตามทะเบียนราษฎร์
-                        </div>
-                      </CardHeader>
-                      <TabContent activeTab={this.state.activeTab1}>
-                        <TabPane tabId='11'>
-                          <CardBody
-                            className='pt-2'
-                            style={{ marginLeft: '2' }}
-                          >
-                            <Row className='mt-3'>
-                              <Col md='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-4 text-muted'>
-                                          52.73%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          จำนวนประชากรเพศหญิง
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='danger'
-                                        value='52.73'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col md='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          47.26%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          จำนวนประชากรเพศชาย
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='success'
-                                        value='47.26'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                            <div className='divider mt-4' />
-                            <Row>
-                              <Col md='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          11.68%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          จำนวนประชากรผู้สูงอายุ (60ปี ขึ้นไป)
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='primary'
-                                        value='11.68'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col md='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          24.11%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          จำนวนประชากรเด็ก (อายุระหว่าง 0-15 ปี)
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='warning'
-                                        value='24.11'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                            <Row>
-                              <Col md='10'>
-                                <div className='widget-content'>
-                                  <div className='widget-content-outer'>
-                                    <div className='widget-content-wrapper'>
-                                      <div className='widget-content-left mr-3'>
-                                        <div className='widget-numbers fsize-3 text-muted'>
-                                          65.12%
-                                        </div>
-                                      </div>
-                                      <div className='widget-content-right'>
-                                        <div className='text-muted opacity-6'>
-                                          จำนวนประชากรวัยทำงาน (อายุระหว่าง15-60
-                                          ปี)
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className='widget-progress-wrapper mt-1'>
-                                      <Progress
-                                        className='progress-bar-sm progress-bar-animated-alt'
-                                        color='primary'
-                                        value='65.12'
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                          </CardBody>
-                          <div className='widget-chart p-0'>
-                            <div className='widget-chart-content'>
-                              <div className='widget-description mt-0 text-danger'>
-                                <FontAwesomeIcon icon={faArrowDown} />
-                                <span className='pl-1' fontSize=''>
-                                  0.066%
-                                </span>
-                                <span className='text-muted opacity-8 pl-1'>
-                                  ร้อยละการการขยายตัวของจำนวนประชากรเทียบจากปีก่อนหน้า
-                                </span>
-                              </div>
-                            </div>
-                            <ResponsiveContainer height={220}>
-                              <iframe
-                                width='500'
-                                height='214'
-                                seamless
-                                frameborder='0'
-                                scrolling='no'
-                                src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1363727181&amp;format=interactive'
-                              ></iframe>
-                            </ResponsiveContainer>
-                            <CardSubtitle
-                              style={{
-                                textAlign: 'center',
-                                padding: 5,
-                                color: 'grey',
-                                fontSize: 14
-                              }}
-                            >
-                              ที่มา: กรมการปกครอง กระทรวงมหาดไทย
-                            </CardSubtitle>
-                          </div>
-                        </TabPane>
-                        <TabPane tabId='22'>
-                          <div className='widget-chart p-0'>
-                            <ResponsiveContainer height={200} width={600}>
-                              <Chart
-                                width={'500px'}
-                                height={'500px'}
-                                chartType='LineChart'
-                                data={[
-                                  ['ปี', 'จำนวน(คน)'],
-
-                                  [2553, 45000],
-                                  [2554, 55000],
-                                  [2555, 70000],
-                                  [2556, 80000],
-                                  [2557, 94000],
-                                  [2558, 120000],
-                                  [2559, 150000],
-                                  [2560, 200000]
-                                ]}
-                                options={{
-                                  hAxis: {
-                                    title: 'ปี'
-                                  },
-                                  vAxis: {
-                                    title: 'จำนวนประชากร'
-                                  }
-                                }}
-                                rootProps={{ 'data-testid': '1' }}
-                              />
-                            </ResponsiveContainer>
-                          </div>
-                        </TabPane>
-                      </TabContent>
-                    </Card>
-                  </Col>
-
-                  <Col md='5' lg='5'>
-                    <Card
-                      style={{
-                        marginTop: 0
-                      }}
-                    >
-                      <iframe
-                        width='420'
-                        height='328'
-                        seamless
-                        frameborder='0'
-                        scrolling='no'
-                        src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=775098942&amp;format=interactive'
-                      ></iframe>
-                      <CardSubtitle
-                        style={{
-                          marginTop: 1,
-                          textAlign: 'left',
-                          color: 'grey',
-                          textAlign: 'center',
-                          fontSize: 14
-                        }}
-                      >
-                        ที่มา: สำนักงานสถิติจังหวัดภูเก็ต
-                      </CardSubtitle>
-                    </Card>
-                    <Card
-                      style={{
-                        marginTop: 10
-                      }}
-                    >
-                      <iframe
-                        width='420'
-                        height='410'
-                        seamless
-                        frameborder='0'
-                        scrolling='no'
-                        src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1416066045&amp;format=interactive'
-                      />
-                      <CardSubtitle
-                        style={{
-                          marginTop: 1,
-                          textAlign: 'left',
-                          color: 'grey',
-                          textAlign: 'center',
-                          fontSize: 14
-                        }}
-                      >
-                        ที่มา: กรมการปกครอง กระทรวงมหาดไทย
-                      </CardSubtitle>
-                    </Card>
-                  </Col>
-                </Row>
-                <hr class='style5' style={{ backgroundColor: '#113C7A' }} />
-                <Row>
-                  <Container
-                    style={{
-                      marginTop: 20,
-                      width: '100%',
-                      marginBottom: 20,
-                      backgroundColor: '#113C7A'
-                    }}
-                  >
-                    <CardTitle
-                      style={{
-                        textShadowOffset: { width: 2, height: 2 },
-                        fontSize: 20,
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        fontFamily: 'sans-serif',
-                        textDecorationStyle: 'solid',
-                        color: 'White'
-                      }}
-                    >
-                      ข้อมูลสารสนเทศเพื่อการบริหารพื้นที่ จังหวัดภูเก็ต
-                    </CardTitle>
-                    <Row
-                      style={{
-                        justifyContent: 'space-between',
-                        marginBottom: 10
-                      }}
-                    >
-                      <Card style={{ backgroundColor: '#D3D3D3' }}>
-                        <Col style={{ textAlign: 'center' }}>
-                          <div>
-                            <CardImg
-                              style={{
-                                marginTop: 7,
-                                resizeMode: 'contain',
-                                height: 150,
-                                width: 220
-                              }}
-                              variant='top'
-                              src='https://i.pinimg.com/736x/81/c0/36/81c036427b68bf284f5ddc04c3a32160.jpg'
-                            />
-                          </div>
-                          <div>
-                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=371&Itemid=635'>
-                              <Button>คลิก</Button>
-                            </a>
-                          </div>
-                        </Col>
-                      </Card>
-                      <Card style={{ backgroundColor: '#D3D3D3' }}>
-                        <Col style={{ textAlign: 'center' }}>
-                          <div>
-                            <CardImg
-                              style={{
-                                marginTop: 7,
-                                resizeMode: 'contain',
-                                height: 150,
-                                width: 220
-                              }}
-                              variant='top'
-                              src='https://image.freepik.com/free-vector/happy-young-couple-cartoon-icon_24908-6971.jpg'
-                            />
-                          </div>
-                          <div>
-                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=373&Itemid=636'>
-                              <Button>คลิก</Button>
-                            </a>
-                          </div>
-                        </Col>
-                      </Card>
-                      <Card style={{ backgroundColor: '#D3D3D3' }}>
-                        <Col style={{ textAlign: 'center' }}>
-                          <div>
-                            <CardImg
-                              style={{
-                                marginTop: 7,
-                                resizeMode: 'contain',
-                                height: 150,
-                                width: 220
-                              }}
-                              variant='top'
-                              src='https://image.freepik.com/free-vector/couple-elderly-with-smile-face_105783-129.jpg'
-                            />
-                          </div>
-                          <div>
-                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=374&Itemid=638'>
-                              <Button>คลิก</Button>
-                            </a>
-                          </div>
-                        </Col>
-                      </Card>
-                      <Card style={{ backgroundColor: '#D3D3D3' }}>
-                        <Col style={{ textAlign: 'center' }}>
-                          <div>
-                            <CardImg
-                              style={{
-                                marginTop: 7,
-                                resizeMode: 'contain',
-                                height: 150,
-                                width: 220
-                              }}
-                              variant='top'
-                              src='https://thumbs.dreamstime.com/b/woman-throw-garbage-trash-bin-plastic-bag-vector-isolated-waste-container-rubbish-segregation-177804394.jpg'
-                            />
-                          </div>
-                          <div>
-                            <a href='http://phuket.nso.go.th/index.php?option=com_content&view=article&id=372&Itemid=637'>
-                              <Button>คลิก</Button>
-                            </a>
-                          </div>
-                        </Col>
-                      </Card>
-                    </Row>
-                  </Container>
-                </Row>
-                <hr class='style5' style={{ backgroundColor: '#113C7A' }} />
-                <Card style={{ marginTop: 20, padding: 2 }}>
-                  <Col>
-                    <iframe
-                      width='1024'
-                      height='714'
-                      seamless
-                      frameborder='0'
-                      scrolling='no'
-                      src='https://docs.google.com/spreadsheets/d/e/2PACX-1vR6wNP974coAJ0OsHNS_I1PXyDSeOHrgVe51akze9wmvWHtIpKqpSdT2dZWBjerofco7_VrnZ5DQREw/pubchart?oid=1831049486&amp;format=interactive'
-                    ></iframe>
-                    <CardSubtitle
-                      style={{
-                        textAlign: 'center',
-                        color: 'grey',
-                        fontSize: 14,
-                        marginBottom: 10
-                      }}
-                    >
-                      ที่มา: กรมการปกครอง กระทรวงมหาดไทย
-                    </CardSubtitle>
-                  </Col>
-                </Card>
-                <Card style={{ marginTop: 20, padding: 2, width: 805 }}>
-                  <iframe
-                    width='800'
-                    height='486'
-                    src='https://app.powerbi.com/view?r=eyJrIjoiMGI5ZjRiOWMtNjRiNS00ZTllLThkOGMtYjQ0OWFjNDk4ZTI2IiwidCI6IjhlNjM0ZTY3LTlkNjYtNDZkMi1hNTI5LWUxYjcwOGM1ZDhiYyIsImMiOjEwfQ%3D%3D&pageName=ReportSection'
-                    frameborder='0'
-                    allowFullScreen='true'
-                  ></iframe>
-                </Card>
-              </Container>
-
-              <Footer />
-            </div>
-          </ReactCSSTransitionGroup>
+                </Col>
+                <Col style={{ textAlign: 'center' }}>
+                  <Link to='/page_table'>
+                    <img
+                      src='https://www.flaticon.com/svg/static/icons/svg/550/550607.svg'
+                      style={{ width: '170px' }}
+                    />
+                  </Link>
+                  <div style={{ marginTop: '10px' }}>การจำลองค่าทางสถิติ</div>
+                </Col>
+                <Col style={{ textAlign: 'center' }}>
+                  <Link to='/page_contact'>
+                    <img
+                      src='https://www.flaticon.com/svg/static/icons/svg/2190/2190552.svg'
+                      style={{ width: '170px' }}
+                    />
+                  </Link>
+                  <div style={{ marginTop: '10px' }}>คำแนะนำ</div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
         </Fragment>
+
+        <Footer />
       </div>
     )
   }

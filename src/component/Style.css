@@ -1,7 +1,7 @@
 .Text{
     text-align: center;
     font-size: 100px;
-    color: blue;
+  
     font-style: bold;
 }
 .Main{
@@ -11,7 +11,7 @@
 
 }
 .bgco{
-    background-color:#113C7A;
+    background-color:'white';
 }
 hr { border-left: 0; }
 hr.style5 {
@@ -56,4 +56,8 @@ hr.style5 {
   to {
     transform: rotate(360deg);
   }
+}
+
+#Title{
+  letter-spacing: 5px;
 }
