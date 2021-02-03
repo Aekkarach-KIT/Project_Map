@@ -17,6 +17,7 @@ const NaBar = props => {
             <Nav.Link href='/page_covid'>Covid-19</Nav.Link>
             <Nav.Link href='/page_table'>การคำนวณค่า</Nav.Link>
             <Nav.Link href='/page_contact'>ติดต่อเรา</Nav.Link>
+            <Nav.Link href='/page_download'>Download</Nav.Link>
           </Nav>
 
           <Form inline>

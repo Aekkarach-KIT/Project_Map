@@ -20,7 +20,7 @@ import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase'
-
+import { Link } from 'react-router-dom'
 class Login extends Component {
   constructor (props) {
     super(props)
@@ -36,9 +36,7 @@ class Login extends Component {
 
   uiConfig = {
     signInFlow: 'popup',
-    signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    ],
+    signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID],
 
     callback: {
       signInSuccess: () => false
@@ -83,6 +81,7 @@ class Login extends Component {
         console.log(err)
       })
   }
+ 
 
   render () {
     return (

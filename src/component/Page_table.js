@@ -3,6 +3,7 @@ import NaBar from './Bar'
 import Footer from './Footer'
 import Calculator from './Calculator'
 import { Navbar, Nav, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import {
   Row,
   Col,
@@ -30,28 +31,16 @@ class PageTable extends Component {
       <div>
         <NaBar />
         <Container>
+        
           <Row>
-            <div class='container-fluid'>
-              <h2
-                class='mt-4'
-                style={{
-                  color: 'blue',
-                  textAlign: 'center',
-                  backgroundColor: 'orange',
-                  height: 70
-                }}
-              >
-                การคำนวณค่าประมาณการทางสถิติแบ่งตามหมวดหมู่
-              </h2>
-            </div>
             <Col>
               <Row style={{ justifyContent: 'space-around' }}>
-               <Calculator/>
+                <Calculator />
               </Row>
             </Col>
           </Row>
         </Container>
-        
+
         <Footer />
       </div>
     )

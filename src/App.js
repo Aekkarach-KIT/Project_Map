@@ -10,6 +10,7 @@ import Page_contact from './component/Page_contact'
 import Page_env from './component/Page_env'
 import Page_edu from './component/Page_edu'
 import Page_worker from './component/Page_worker'
+import Page_download from './component/Page_download'
 
 import 'mdbreact/dist/css/mdb.css'
 import fire from './config/fire'
@@ -57,6 +58,7 @@ class App extends Component {
         <Route path='/page_env' component={Page_env} />
         <Route path='/page_edu' component={Page_edu} />
         <Route path='/page_worker' component={Page_worker} />
+        <Route path='/page_download' component={Page_download} />
       </div>
     )
   }
