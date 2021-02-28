@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
+import './Style.css'
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -20,7 +21,6 @@ import fire from '../config/fire'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 import firebase from 'firebase'
-import { Link } from 'react-router-dom'
 class Login extends Component {
   constructor (props) {
     super(props)
@@ -81,7 +81,6 @@ class Login extends Component {
         console.log(err)
       })
   }
- 
 
   render () {
     return (
@@ -89,7 +88,7 @@ class Login extends Component {
         <Router>
           <div>
             <MDBNavbar dark expand='md' fixed='top'>
-              <MDBNavbarBrand>
+              <MDBNavbarBrand style={{ fontFamily: 'Kanit', fontSize: '30px' }}>
                 <strong className='white-text'>PHUKET MAP POPULATION</strong>
               </MDBNavbarBrand>
             </MDBNavbar>
@@ -107,7 +106,7 @@ class Login extends Component {
                 >
                   <h1 className='h1-responsive font-weight-bold'>WELCOME</h1>
                   <hr className='hr-light' />
-                  <h6 className='mb-4'>
+                  <h6 className='mb-4' style={{ fontSize: '17px' }}>
                     ยินดีต้อนรับเข้าสู่เว็บไซต์แผนที่แสดงจำนวนประชากรของจังหวัดภูเก็ต
                     ซึ่งเป็นเว็บไซต์ที่มีประโยชน์ในเรื่องของข้อมูลทางสถิติประชากรในแต่ละพื้นที่ของจังหวัดภูเก็ต
                     และ มีข้อมูลอื่น ๆ ที่น่าสนใจ เช่น ปริมาณขยะ
@@ -138,6 +137,7 @@ class Login extends Component {
                           icon='envelope'
                           value={this.state.email}
                           onChange={this.handleChange}
+                          style={{ fontFamily: 'Kanit' }}
                         />
                         <MDBInput
                           className='white-text'
@@ -152,10 +152,18 @@ class Login extends Component {
                           onChange={this.handleChange}
                         />
                         <div className='text-center mt-4 black-text'>
-                          <MDBBtn color='amber' onClick={this.login}>
+                          <MDBBtn
+                            style={{ fontFamily: 'Kanit', fontSize: '17px' }}
+                            color='amber'
+                            onClick={this.login}
+                          >
                             Login
                           </MDBBtn>
-                          <MDBBtn color='amber' onClick={this.sigup}>
+                          <MDBBtn
+                            style={{ fontFamily: 'Kanit', fontSize: '17px' }}
+                            color='amber'
+                            onClick={this.sigup}
+                          >
                             Sign Up
                           </MDBBtn>
                           <hr className='hr-light' />

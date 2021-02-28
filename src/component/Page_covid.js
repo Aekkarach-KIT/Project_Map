@@ -1,6 +1,5 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-
 import Typography from '@material-ui/core/Typography'
 import './Style.css'
 import Container from '@material-ui/core/Container'
@@ -65,7 +64,8 @@ class PageCovid extends React.Component {
         newConfirmed: '',
         newHospitalized: '',
         newDeaths: '',
-        newRecovered: ''
+        newRecovered: '',
+        
       },
       data_pie: [{}]
     }
@@ -126,7 +126,10 @@ class PageCovid extends React.Component {
           <Container>
             <Row style={{ justifyContent: 'space-between' }}>
               <div>
-                <a href='https://covid19.ddc.moph.go.th/th/self_screening'>
+                <a
+                  target='_blank'
+                  href='https://covid19.ddc.moph.go.th/th/self_screening'
+                >
                   <Button
                     color='primary'
                     style={{
@@ -138,7 +141,7 @@ class PageCovid extends React.Component {
                       marginLeft: 50,
                       fontSize: 25,
                       color: 'white',
-                      fontFamily: 'monospace',
+                      fontFamily: 'Kanit',
                       textAlign: 'center',
                       backgroundColor: '#66CCCC'
                     }}
@@ -148,7 +151,7 @@ class PageCovid extends React.Component {
                 </a>
               </div>
               <div>
-                <a href='https://www.xn--b3czh8ayeuf.com/'>
+                <a target='_blank' href='https://www.xn--b3czh8ayeuf.com/'>
                   <Button
                     color='danger'
                     style={{
@@ -160,7 +163,7 @@ class PageCovid extends React.Component {
                       marginLeft: 50,
                       fontSize: 25,
                       color: 'white',
-                      fontFamily: 'monospace',
+                      fontFamily: 'Kanit',
                       textAlign: 'center'
                     }}
                   >
@@ -169,7 +172,10 @@ class PageCovid extends React.Component {
                 </a>
               </div>
               <div>
-                <a href='https://ddc.moph.go.th/viralpneumonia/img/drchana_full.jpg'>
+                <a
+                  target='_blank'
+                  href='https://ddc.moph.go.th/viralpneumonia/img/drchana_full.jpg'
+                >
                   <Button
                     color='success'
                     style={{
@@ -181,7 +187,7 @@ class PageCovid extends React.Component {
                       marginLeft: 50,
                       fontSize: 25,
                       color: 'white',
-                      fontFamily: 'monospace',
+                      fontFamily: 'Kanit',
                       textAlign: 'center'
                     }}
                   >
@@ -191,20 +197,24 @@ class PageCovid extends React.Component {
               </div>
             </Row>
           </Container>
-         
 
           <div className={classes.appBarSpacer} />
           <Container>
             <Grid container spacing={2}>
               <Grid item xs={12}>
-                <Typography align='right' style={{ color: 'white' }}>
+                <Typography
+                  align='right'
+                  style={{ color: 'red', fontSize: '25',marginBottom:'20px',fontFamily: 'Kanit' }}
+                >
                   อัพเดทล่าสุดเมื่อ: {data_text.updatedDate}
                 </Typography>
                 <Typography variant='subtitle2' align='right'>
                   <a
+                    target='_blank'
                     href={data_text.source}
                     target='_blank'
                     rel='noopener noreferrer'
+                    style={{fontFamily: 'Kanit'}}
                   >
                     {data_text.source}
                   </a>
@@ -215,11 +225,11 @@ class PageCovid extends React.Component {
                   className={classes.paper}
                   style={{ backgroundColor: '#FFCC33' }}
                 >
-                  <Typography>ยืนยัน</Typography>
-                  <Typography variant='h3'>
+                  <Typography style={{fontFamily: 'Kanit'}}>ยืนยัน</Typography>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h3'>
                     {data_text.confirmed.toLocaleString()}
                   </Typography>
-                  <Typography variant='h5'>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h5'>
                     ({data_text.newConfirmed.toLocaleString()})
                   </Typography>
                 </Paper>
@@ -229,11 +239,11 @@ class PageCovid extends React.Component {
                   className={classes.paper}
                   style={{ backgroundColor: '#99CCFF' }}
                 >
-                  <Typography>รักษาตัวในโรงพยาบาล</Typography>
-                  <Typography variant='h3'>
+                  <Typography style={{fontFamily: 'Kanit'}}>รักษาตัวในโรงพยาบาล</Typography>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h3'>
                     {data_text.hospitalized.toLocaleString()}
                   </Typography>
-                  <Typography variant='h5'>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h5'>
                     ({data_text.newHospitalized.toLocaleString()})
                   </Typography>
                 </Paper>
@@ -243,11 +253,11 @@ class PageCovid extends React.Component {
                   className={classes.paper}
                   style={{ backgroundColor: '#FF6666' }}
                 >
-                  <Typography>เสียชีวิต</Typography>
-                  <Typography variant='h3'>
+                  <Typography style={{fontFamily: 'Kanit'}}>เสียชีวิต</Typography>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h3'>
                     {data_text.deaths.toLocaleString()}
                   </Typography>
-                  <Typography variant='h5'>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h5'>
                     ({data_text.newDeaths.toLocaleString()})
                   </Typography>
                 </Paper>
@@ -257,11 +267,11 @@ class PageCovid extends React.Component {
                   className={classes.paper}
                   style={{ backgroundColor: '#00CC33' }}
                 >
-                  <Typography>หายแล้ว</Typography>
-                  <Typography variant='h3'>
+                  <Typography style={{fontFamily: 'Kanit'}}>หายแล้ว</Typography>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h3'>
                     {data_text.recovered.toLocaleString()}
                   </Typography>
-                  <Typography variant='h5'>
+                  <Typography style={{fontFamily: 'Kanit'}} variant='h5'>
                     ({data_text.newRecovered.toLocaleString()})
                   </Typography>
                 </Paper>

@@ -2,28 +2,13 @@ import NaBar from './Bar'
 import Footer from './Footer'
 import './Style.css'
 import React, { Component, Fragment } from 'react'
-import {
-  Row,
-  Col,
-  Button,
-  CardHeader,
-  Card,
-  CardBody,
-  Progress,
-  TabContent,
-  TabPane,
-  CardTitle,
-  CardSubtitle,
-  CardText,
-  Container,
-  CardImg
-} from 'reactstrap'
+import { Row, Col, Container } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
 export default class PageHome extends Component {
   render () {
     return (
-      <div>
+      <div className='bgco'>
         <NaBar />
         <Fragment>
           <div>
@@ -32,13 +17,13 @@ export default class PageHome extends Component {
                 style={{
                   textAlign: 'center',
                   letterSpacing: '3px',
-                  fontSize: '55px',
+                  fontSize: '45px',
                   fontStyle: 'bold',
                   marginTop: '30px',
-                  color: '#259AC3'
+                  color: '#D80000'
                 }}
               >
-                ข้อมูลสถิติจังหวัดภูเก็ต
+                DATA VISUALIZATION AND ANALYTICS
               </div>
               <div
                 style={{
@@ -49,7 +34,7 @@ export default class PageHome extends Component {
                   color: '#525252'
                 }}
               >
-                ระบบรวบรวมสถิติด้านต่างๆในพื้นที่จังหวัดภูเก็ต
+                กรณีศึกษา: ข้อมูลสถิติจังหวัดภูเก็ต
               </div>
               <div
                 style={{
@@ -60,7 +45,7 @@ export default class PageHome extends Component {
                   color: '#606C7B'
                 }}
               >
-                Phuket Static System
+                Phuket statistics System
               </div>
 
               <Row
@@ -81,18 +66,7 @@ export default class PageHome extends Component {
                   <div style={{ marginTop: '10px' }}>หน้าหลัก</div>
                 </Col>
                 <Col style={{ textAlign: 'center' }}>
-                  <Link to='/page_covid'>
-                    <img
-                      src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
-                      style={{ width: '170px' }}
-                    />
-                  </Link>
-                  <div style={{ marginTop: '10px' }}>
-                    สถานการณ์โควิดในประเทศไทย
-                  </div>
-                </Col>
-                <Col style={{ textAlign: 'center' }}>
-                  <Link to='/page_table'>
+                  <Link to='/page_cal'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/550/550607.svg'
                       style={{ width: '170px' }}
@@ -101,13 +75,22 @@ export default class PageHome extends Component {
                   <div style={{ marginTop: '10px' }}>การจำลองค่าทางสถิติ</div>
                 </Col>
                 <Col style={{ textAlign: 'center' }}>
+                  <Link to='/page_covid'>
+                    <img
+                      src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
+                      style={{ width: '170px' }}
+                    />
+                  </Link>
+                  <div style={{ marginTop: '10px' }}>สถานการณ์ Covid-19</div>
+                </Col>
+                <Col style={{ textAlign: 'center' }}>
                   <Link to='/page_contact'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/2190/2190552.svg'
                       style={{ width: '170px' }}
                     />
                   </Link>
-                  <div style={{ marginTop: '10px' }}>คำแนะนำ</div>
+                  <div style={{ marginTop: '10px' }}>ติดต่อเรา</div>
                 </Col>
               </Row>
             </Container>
