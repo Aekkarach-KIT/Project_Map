@@ -12,7 +12,8 @@ export default class PageHome extends Component {
         <NaBar />
         <Fragment>
           <div>
-            <Container>
+            <Container
+            style={{marginBottom: '160px'}}>
               <div
                 style={{
                   textAlign: 'center',
@@ -20,7 +21,7 @@ export default class PageHome extends Component {
                   fontSize: '45px',
                   fontStyle: 'bold',
                   marginTop: '30px',
-                  color: '#D80000'
+                  color: '#D80000',
                 }}
               >
                 DATA VISUALIZATION AND ANALYTICS
@@ -51,7 +52,7 @@ export default class PageHome extends Component {
               <Row
                 style={{
                   justifyContent: 'center',
-                  marginTop: '50px',
+                  marginTop: '100px',
                   marginBottom: '130px'
                 }}
               >
@@ -59,17 +60,17 @@ export default class PageHome extends Component {
                   <Link to='/page_home'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
-                      style={{ width: '170px' }}
+                      style={{ width: '120px' }}
                     />
                   </Link>
 
-                  <div style={{ marginTop: '10px' }}>หน้าหลัก</div>
+                  <div style={{ marginTop: '10px' }}>สถิติภาพรวม</div>
                 </Col>
                 <Col style={{ textAlign: 'center' }}>
                   <Link to='/page_cal'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/550/550607.svg'
-                      style={{ width: '170px' }}
+                      style={{ width: '120px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>การจำลองค่าทางสถิติ</div>
@@ -78,7 +79,7 @@ export default class PageHome extends Component {
                   <Link to='/page_covid'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
-                      style={{ width: '170px' }}
+                      style={{ width: '120px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>สถานการณ์ Covid-19</div>
@@ -87,7 +88,7 @@ export default class PageHome extends Component {
                   <Link to='/page_contact'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/2190/2190552.svg'
-                      style={{ width: '170px' }}
+                      style={{ width: '120px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>ติดต่อเรา</div>

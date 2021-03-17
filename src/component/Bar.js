@@ -13,12 +13,19 @@ const NaBar = props => {
       <div>
         <Navbar style={{ backgroundColor: '	#006666' }}>
           <Navbar.Brand
-            href='/page_home'
+            href='/'
             style={{ color: 'white', fontSize: '20px' }}
           >
-            หน้าแรก
+            หน้าหลัก
           </Navbar.Brand>
+          
           <Nav className='mr-auto'>
+            <Nav.Link
+              href='/page_home'
+              style={{ color: 'white', fontSize: '20px' }}
+            >
+              สถิติภาพรวม
+            </Nav.Link>
             <Nav.Link
               href='/page_covid'
               style={{ color: 'white', fontSize: '20px' }}
@@ -29,7 +36,7 @@ const NaBar = props => {
               href='/page_cal'
               style={{ color: 'white', fontSize: '20px' }}
             >
-              การคำนวณค่า
+              การจำลองค่าทางสถิติ
             </Nav.Link>
             <Nav.Link
               href='/page_contact'
@@ -46,7 +53,7 @@ const NaBar = props => {
           </Nav>
 
           <Form inline>
-            <MDBBtn rounded color='danger' onClick={logout}>
+            <MDBBtn rounded color='danger' onClick={logout} style={{width:'130px',height:'50px', fontSize:'15px'}}>
               logout
             </MDBBtn>
           </Form>

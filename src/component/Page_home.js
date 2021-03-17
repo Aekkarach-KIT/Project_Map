@@ -55,16 +55,27 @@ export default class PageHome extends Component {
                   }}
                 >
                   <Col style={{ textAlign: 'center' }}>
-                  <Link to='/page_edu' style={{ marginTop: '30px'}}>
+                    <Link to='/page_home' style={{ marginTop: '30px' }}>
+                      <img
+                        src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
+                        style={{ width: '90px' }}
+                      />
+                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                        สถิติภาพรวม
+                      </div>
+                    </Link>
+                  </Col>
+
+                  <Col style={{ textAlign: 'center' }}>
+                    <Link to='/page_edu' style={{ marginTop: '30px' }}>
                       <img
                         src='https://cdn3.iconfinder.com/data/icons/education-and-school-8/48/Education-256.png'
                         style={{ width: '90px' }}
                       />
                       <div style={{ fontSize: '20px', color: '#003399' }}>
-                    การศึกษา
+                        การศึกษา
                       </div>
                     </Link>
-                    
                   </Col>
                   <Col style={{ textAlign: 'center' }}>
                     <Link to='/page_env' style={{ marginTop: '30px' }}>

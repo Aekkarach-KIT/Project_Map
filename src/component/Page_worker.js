@@ -36,6 +36,17 @@ export default class PageWorker extends Component {
                     width: '1280px'
                   }}
                 >
+                  <Col style={{ textAlign: 'center' }}>
+                    <Link to='/page_home' style={{ marginTop: '30px' }}>
+                      <img
+                        src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
+                        style={{ width: '90px' }}
+                      />
+                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                        สถิติภาพรวม
+                      </div>
+                    </Link>
+                  </Col>
                    <Col style={{ textAlign: 'center' }}>
                   <Link to='/page_edu' style={{ marginTop: '30px'}}>
                       <img

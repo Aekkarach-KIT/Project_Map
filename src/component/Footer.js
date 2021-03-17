@@ -27,7 +27,7 @@ const FooterPage = () => {
                   style={{ width: '30px' }}
                 />
                 <div style={{ fontSize: '15px', color: 'white' }}>
-                  หน้าหลัก
+                  สถิติภาพรวม
                 </div>
               </Link>
             </MDBCol>
@@ -65,7 +65,7 @@ const FooterPage = () => {
             <MDBCol style={{ textAlign: 'center' }}>
               <Link to='/page_covid' style={{ marginTop: '30px' }}>
                 <img
-                  src='https://r7app.moph.go.th/covid-dashboard/assets/images/coronavirus.png'
+                  src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
                   style={{ width: '30px' }}
                 />
                 <div style={{ fontSize: '15px', color: 'white' }}>
