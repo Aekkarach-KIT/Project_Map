@@ -167,7 +167,7 @@ class PageContact extends Component {
                     ref={message => (this.textAreaMessage = message)}
                   ></textarea>
                 </div>
-                <button type='submit' className='btn btn-success'>
+                <button type='submit' className='btn btn-success' style={{fontSize:'15px'}}>
                   ส่ง
                 </button>
               </form>

@@ -46,7 +46,7 @@ export default class PageCal extends Component {
               >
                 <iframe
                   width='1280'
-                  height='1450'
+                  height='1750'
                   src='https://app.powerbi.com/view?r=eyJrIjoiNzkyZjQ1OGEtMGVhYi00YWFjLTg0MjYtNzIzMWY1MmRhNjBhIiwidCI6IjhlNjM0ZTY3LTlkNjYtNDZkMi1hNTI5LWUxYjcwOGM1ZDhiYyIsImMiOjEwfQ%3D%3D'
                   frameborder='0'
                   allowFullScreen='true'

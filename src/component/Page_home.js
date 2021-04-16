@@ -58,9 +58,9 @@ export default class PageHome extends Component {
                     <Link to='/page_home' style={{ marginTop: '30px' }}>
                       <img
                         src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
-                        style={{ width: '90px' }}
+                        style={{ width: '70px' }}
                       />
-                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                      <div style={{ fontSize: '17px', color: '#003399' }}>
                         สถิติภาพรวม
                       </div>
                     </Link>
@@ -70,9 +70,9 @@ export default class PageHome extends Component {
                     <Link to='/page_edu' style={{ marginTop: '30px' }}>
                       <img
                         src='https://cdn3.iconfinder.com/data/icons/education-and-school-8/48/Education-256.png'
-                        style={{ width: '90px' }}
+                        style={{ width: '70px' }}
                       />
-                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                      <div style={{ fontSize: '17px', color: '#003399' }}>
                         การศึกษา
                       </div>
                     </Link>
@@ -81,10 +81,10 @@ export default class PageHome extends Component {
                     <Link to='/page_env' style={{ marginTop: '30px' }}>
                       <img
                         src='https://cdn0.iconfinder.com/data/icons/streamline-emoji-1/48/138-man-farmer-2-256.png'
-                        style={{ width: '90px' }}
+                        style={{ width: '70px' }}
                       />
 
-                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                      <div style={{ fontSize: '17px', color: '#003399' }}>
                         การเกษตรและสิ่งแวดล้อม
                       </div>
                     </Link>
@@ -93,10 +93,10 @@ export default class PageHome extends Component {
                     <Link to='/page_worker' style={{ marginTop: '30px' }}>
                       <img
                         src='https://cdn4.iconfinder.com/data/icons/avatars-xmas-giveaway/128/builder_worker_helmet-256.png'
-                        style={{ width: '90px' }}
+                        style={{ width: '70px' }}
                       />
 
-                      <div style={{ fontSize: '20px', color: '#003399' }}>
+                      <div style={{ fontSize: '17px', color: '#003399' }}>
                         สถิติแรงงาน
                       </div>
                     </Link>

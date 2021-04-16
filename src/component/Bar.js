@@ -14,7 +14,7 @@ const NaBar = props => {
         <Navbar style={{ backgroundColor: '	#006666' }}>
           <Navbar.Brand
             href='/'
-            style={{ color: 'white', fontSize: '20px' }}
+            style={{ color: 'white', fontSize: '15px' }}
           >
             หน้าหลัก
           </Navbar.Brand>
@@ -22,38 +22,38 @@ const NaBar = props => {
           <Nav className='mr-auto'>
             <Nav.Link
               href='/page_home'
-              style={{ color: 'white', fontSize: '20px' }}
+              style={{ color: 'white', fontSize: '15px' }}
             >
               สถิติภาพรวม
             </Nav.Link>
             <Nav.Link
               href='/page_covid'
-              style={{ color: 'white', fontSize: '20px' }}
+              style={{ color: 'white', fontSize: '15px' }}
             >
               สถานการณ์Covid-19
             </Nav.Link>
             <Nav.Link
               href='/page_cal'
-              style={{ color: 'white', fontSize: '20px' }}
+              style={{ color: 'white', fontSize: '15px' }}
             >
               การจำลองค่าทางสถิติ
             </Nav.Link>
             <Nav.Link
               href='/page_contact'
-              style={{ color: 'white', fontSize: '20px' }}
+              style={{ color: 'white', fontSize: '15px' }}
             >
               ติดต่อเรา
             </Nav.Link>
             <Nav.Link
               href='/page_download'
-              style={{ color: 'white', fontSize: '20px' }}
+              style={{ color: 'white', fontSize: '15px' }}
             >
               Download
             </Nav.Link>
           </Nav>
 
           <Form inline>
-            <MDBBtn rounded color='danger' onClick={logout} style={{width:'130px',height:'50px', fontSize:'15px'}}>
+            <MDBBtn rounded color='danger' onClick={logout} style={{width:'120px',height:'40px', fontSize:'12px'}}>
               logout
             </MDBBtn>
           </Form>

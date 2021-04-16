@@ -52,7 +52,7 @@ export default class PageHome extends Component {
               <Row
                 style={{
                   justifyContent: 'center',
-                  marginTop: '100px',
+                  marginTop: '125px',
                   marginBottom: '130px'
                 }}
               >
@@ -60,7 +60,7 @@ export default class PageHome extends Component {
                   <Link to='/page_home'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/3011/3011069.svg'
-                      style={{ width: '120px' }}
+                      style={{ width: '100px' }}
                     />
                   </Link>
 
@@ -70,7 +70,7 @@ export default class PageHome extends Component {
                   <Link to='/page_cal'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/550/550607.svg'
-                      style={{ width: '120px' }}
+                      style={{ width: '100px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>การจำลองค่าทางสถิติ</div>
@@ -79,7 +79,7 @@ export default class PageHome extends Component {
                   <Link to='/page_covid'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/3728/3728616.svg'
-                      style={{ width: '120px' }}
+                      style={{ width: '100px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>สถานการณ์ Covid-19</div>
@@ -88,7 +88,7 @@ export default class PageHome extends Component {
                   <Link to='/page_contact'>
                     <img
                       src='https://www.flaticon.com/svg/static/icons/svg/2190/2190552.svg'
-                      style={{ width: '120px' }}
+                      style={{ width: '100px' }}
                     />
                   </Link>
                   <div style={{ marginTop: '10px' }}>ติดต่อเรา</div>
